@@ -5,6 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GradiEnt — Architecture & Spatial Studio</title>
   <meta name="description" content="A tactile architectural portfolio for GradiEnt Studio, where climate, material, and memory shape every line.">
+  
+  <!-- Open Graph / WhatsApp / Social Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GradiEnt — Architecture & Spatial Studio">
+  <meta property="og:description" content="Tactile Architectural Practice by Heru Ardiansyah. Climate, parametric form, and spatial harmony.">
+  <meta property="og:url" content="https://cryptoandforex21th-beep.github.io/gradient-studio/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80">
+  
+  <!-- Web Analytics: Google Analytics 4 (GA4) & Privacy Telemetry -->
+  <!-- Ganti G-XXXXXXXXXX dengan Measurement ID Google Analytics kamu -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PLACEHOLDER');
+  </script>
+  <!-- Free Zero-Config Analytics (GoatCounter) -->
+  <script data-goatcounter="https://gradient-studio.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -121,11 +141,51 @@
     </section>
 
     <section class="contact" id="contact">
-      <h2>Have a site<br>with <em>weather?</em></h2>
-      <div class="contact-info">
-        <div class="contact-line"><span>WhatsApp Direct</span><a href="https://wa.me/6281234567890?text=Halo%20GradiEnt%20Studio,%20saya%20tertarik%20dengan%20proyek%20arsitektur%20Anda" target="_blank">Chat Via WhatsApp</a></div>
-        <div class="contact-line"><span>Email Us</span><a href="mailto:heru.gradient@example.com">heru.gradient@example.com</a></div>
-        <div class="contact-line"><span>Location</span><span>Indonesia · Available Globally</span></div>
+      <div>
+        <h2>Have a site<br>with <em>weather?</em></h2>
+        <p style="font-size:15px;line-height:1.6;color:var(--ink-soft);max-width:440px;margin-top:24px;">
+          Diskusikan rencana tapak, sayembara, atau eksplorasi arsitektur bersama GradiEnt Studio. Tinggalkan detail Anda di formulir untuk konsultasi langsung.
+        </p>
+        <div style="margin-top:35px;font-family:var(--mono);font-size:10px;color:var(--accent);display:flex;align-items:center;gap:10px;">
+          <span style="width:8px;height:8px;border-radius:50%;background:#2ea44f;display:inline-block;box-shadow:0 0 8px #2ea44f;"></span>
+          STUDIO TELEMETRY / VISITOR ANALYTICS: ACTIVE
+        </div>
+      </div>
+
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);padding:32px;border-radius:4px;">
+        <h3 style="font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin:0 0 20px;">Formulir Konsultasi Proyek</h3>
+        <form id="inquiryForm" onsubmit="event.preventDefault();sendInquiry();" style="display:grid;gap:16px;">
+          <div>
+            <label style="display:block;font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-soft);margin-bottom:6px;">Nama Lengkap / Instansi *</label>
+            <input type="text" id="clientName" required placeholder="Nama Anda / Perusahaan" style="width:100%;padding:11px 13px;background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.15);color:var(--paper);font-family:var(--body);font-size:13px;border-radius:2px;outline:none;">
+          </div>
+          <div>
+            <label style="display:block;font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-soft);margin-bottom:6px;">Nomor WhatsApp / Email Kontak *</label>
+            <input type="text" id="clientContact" required placeholder="08xxxxxxxxxx atau email aktif" style="width:100%;padding:11px 13px;background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.15);color:var(--paper);font-family:var(--body);font-size:13px;border-radius:2px;outline:none;">
+          </div>
+          <div>
+            <label style="display:block;font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-soft);margin-bottom:6px;">Kategori Pekerjaan</label>
+            <select id="projectType" style="width:100%;padding:11px 13px;background:#172126;border:1px solid rgba(255,255,255,0.15);color:var(--paper);font-family:var(--body);font-size:13px;border-radius:2px;outline:none;">
+              <option value="Rumah Tinggal / Private Residence">Rumah Tinggal / Private Residence</option>
+              <option value="Bangunan Komersial / Cafe / Hospitality">Bangunan Komersial / Cafe / Hospitality</option>
+              <option value="Desain Parametrik & Masterplanning">Desain Parametrik & Masterplanning</option>
+              <option value="Renovasi Spasial & Interior">Renovasi Spasial & Interior</option>
+              <option value="Kolaborasi Riset / Sayembara">Kolaborasi Riset / Sayembara</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block;font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-soft);margin-bottom:6px;">Rencana Lokasi & Deskripsi Singkat</label>
+            <textarea id="clientNotes" rows="3" placeholder="Ceritakan sedikit tentang lokasi lahan, luasan, atau kebutuhan ruang..." style="width:100%;padding:11px 13px;background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.15);color:var(--paper);font-family:var(--body);font-size:13px;border-radius:2px;outline:none;resize:vertical;"></textarea>
+          </div>
+          <button type="submit" style="background:var(--accent);color:var(--white);border:none;padding:13px 20px;font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;font-weight:600;display:flex;align-items:center;justify-content:center;gap:10px;margin-top:6px;transition:opacity 0.2s;">
+            <span>Kirim via WhatsApp Direct</span>
+            <span>→</span>
+          </button>
+        </form>
+        <div style="margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;font-size:11px;color:var(--accent-soft);font-family:var(--mono);">
+          <span>Email: ardiansyahh22d@student.unhas.ac.id</span>
+          <span>Makassar, Indonesia</span>
+        </div>
       </div>
     </section>
   </main>
@@ -146,6 +206,23 @@ function project(p){let [x,y,z]=p,cy=Math.cos(ry),sy=Math.sin(ry),cx=Math.cos(rx
 function draw(){rx+=(targetX-rx)*.035;ry+=(targetY-ry)*.035;ctx.clearRect(0,0,w,h);const accent=getComputedStyle(document.documentElement).getPropertyValue('--accent').trim(),blue=getComputedStyle(document.documentElement).getPropertyValue('--blueprint').trim();ctx.lineWidth=1;edges.forEach((e,i)=>{const a=project(points[e[0]]),b=project(points[e[1]]);ctx.beginPath();ctx.moveTo(...a);ctx.lineTo(...b);ctx.strokeStyle=i>11?accent:blue;ctx.globalAlpha=i>11?.9:.7;ctx.stroke()});points.forEach((p,i)=>{const q=project(p);ctx.beginPath();ctx.arc(q[0],q[1],i>7?2:2.7,0,Math.PI*2);ctx.fillStyle=i>7?accent:blue;ctx.globalAlpha=.95;ctx.fill()});ctx.globalAlpha=1;raf=requestAnimationFrame(draw)}
 canvas.addEventListener('pointermove',e=>{const r=canvas.getBoundingClientRect();targetY=(e.clientX-r.left)/r.width*1.5-.75;targetX=(e.clientY-r.top)/r.height*.8-.4});canvas.addEventListener('pointerleave',()=>{targetX=-.22;targetY=.52});window.addEventListener('resize',resize);resize();draw();
 const root=document.documentElement,toggle=document.getElementById('themeToggle');let theme='auto';try{theme=localStorage.getItem('gradient-theme')||'auto'}catch(e){}function applyTheme(){if(theme==='auto')root.removeAttribute('data-theme');else root.dataset.theme=theme;toggle.textContent='Theme: '+theme}toggle.addEventListener('click',()=>{theme=theme==='auto'?'dark':theme==='dark'?'light':'auto';try{localStorage.setItem('gradient-theme',theme)}catch(e){}applyTheme()});applyTheme();
+
+function sendInquiry(){
+  const name = document.getElementById('clientName').value.trim();
+  const contact = document.getElementById('clientContact').value.trim();
+  const type = document.getElementById('projectType').value;
+  const notes = document.getElementById('clientNotes').value.trim();
+
+  const msg = `Halo GradiEnt Studio!\nSaya *${name}* (${contact}) ingin konsultasi arsitektur:\n• Kategori: *${type}*\n• Lokasi & Detail: ${notes || '-'}\n\nMohon informasi waktu luang untuk sesi konsultasi awal. Terima kasih!`;
+
+  // Send GA4 Event if configured
+  if(typeof gtag==='function'){
+    gtag('event','generate_lead',{'event_category':'inquiry','event_label':type,'value':1});
+  }
+
+  // Open WhatsApp with pre-filled lead details
+  window.open(`https://wa.me/6281234567890?text=${encodeURIComponent(msg)}`,'_blank');
+}
 </script>
 
 </body>
