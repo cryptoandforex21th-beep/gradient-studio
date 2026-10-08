@@ -4,14 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GradiEnt — Architecture & Spatial Studio</title>
-  <meta name="description" content="A tactile architectural portfolio for GradiEnt Studio, where climate, material, and memory shape every line.">
+  <meta name="description" content="Tactile Architectural Practice & Computational Spatial Lab by Heru Ardiansyah. Climate, parametric form, biomimicry topology, and spatial harmony.">
+  <link rel="canonical" href="https://gradientarch.tech/">
   
-  <!-- Open Graph / WhatsApp / Social Preview -->
+  <!-- Open Graph / Social Preview -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="GradiEnt — Architecture & Spatial Studio">
-  <meta property="og:description" content="Tactile Architectural Practice by Heru Ardiansyah. Climate, parametric form, and spatial harmony.">
-  <meta property="og:url" content="https://cryptoandforex21th-beep.github.io/gradient-studio/">
+  <meta property="og:description" content="Tactile Architectural Practice by Heru Ardiansyah. Climate, parametric form, biomimicry topology, and spatial harmony.">
+  <meta property="og:url" content="https://gradientarch.tech/">
   <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GradiEnt — Architecture & Spatial Studio">
+  <meta name="twitter:description" content="Tactile Architectural Practice by Heru Ardiansyah. Climate-adaptive architecture and computational spatial design.">
   
   <!-- Web Analytics: Google Analytics 4 (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W4GTB1CP38"></script>
@@ -21,7 +25,7 @@
     gtag('js', new Date());
     gtag('config', 'G-W4GTB1CP38');
   </script>
-  <!-- Free Zero-Config Analytics (GoatCounter) -->
+  <!-- Zero-Config Client Telemetry (GoatCounter) -->
   <script data-goatcounter="https://gradient-studio.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,6 +35,7 @@
   :root{
     --ink:#172126;--ink-soft:#526168;--paper:#e7e3d8;--paper-deep:#d3cec1;--line:#b8b3a7;
     --accent:#cf6b42;--accent-soft:#e8ae88;--blueprint:#a6c3c3;--canvas:#26383c;--white:#f7f3ea;
+    --success:#2ea44f;
     --display:'Cormorant Garamond',Georgia,serif;--body:'IBM Plex Sans',Arial,sans-serif;--mono:'IBM Plex Mono',monospace;
   }
   @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#e7e3d8;--ink-soft:#abb5b3;--paper:#172126;--paper-deep:#223035;--line:#46575a;--canvas:#0f1b1e;--white:#f7f3ea;--blueprint:#9bc3c2}}
@@ -38,23 +43,128 @@
   *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);padding:0 20px 48px;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
   .site{max-width:1320px;margin:auto}
   
-  /* TOPBAR & LOGO ENHANCEMENT FOR FOCAL POINT */
-  .topbar{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:24px 0 20px;gap:22px}
-  .mark{font-family:var(--display);font-size:clamp(32px,4vw,44px);font-weight:700;letter-spacing:-0.03em;display:flex;align-items:center;gap:14px;line-height:1;transition:transform .3s ease}
+  /* TOPBAR & STATUS BADGE */
+  .topbar{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:22px 0 18px;gap:22px}
+  .mark{font-family:var(--display);font-size:clamp(30px,3.8vw,42px);font-weight:700;letter-spacing:-0.03em;display:flex;align-items:center;gap:14px;line-height:1;transition:transform .3s ease}
   .mark:hover{transform:scale(1.02)}
   .mark .brand-name{background:linear-gradient(135deg, var(--ink) 30%, var(--accent) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-  .mark-dot{width:12px;height:12px;background:var(--accent);display:inline-block;border-radius:50%;box-shadow:0 0 14px var(--accent)}
-  .mark-sub{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-left:4px;padding-left:12px;border-left:1px solid var(--line)}
+  .mark-dot{width:11px;height:11px;background:var(--accent);display:inline-block;border-radius:50%;box-shadow:0 0 14px var(--accent)}
+  .mark-sub{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-left:4px;padding-left:12px;border-left:1px solid var(--line)}
   
-  .nav{display:flex;gap:25px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);align-items:center}
-  .nav a{transition:color .2s}.nav a:hover{color:var(--accent)}.theme-toggle{border:1px solid var(--line);background:transparent;padding:7px 11px;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;transition:all .2s}.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
+  .top-status{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:10px;color:var(--ink-soft);letter-spacing:0.06em}
+  .status-dot{width:7px;height:7px;background:var(--success);border-radius:50%;display:inline-block;box-shadow:0 0 8px var(--success);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.85)}}
+
+  .nav{display:flex;gap:22px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);align-items:center}
+  .nav a{transition:color .2s}.nav a:hover{color:var(--accent)}.theme-toggle{border:1px solid var(--line);background:transparent;padding:6px 10px;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;transition:all .2s}.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
   
-  .hero{display:grid;grid-template-columns:minmax(0,.86fr) minmax(360px,1.14fr);gap:clamp(32px,7vw,110px);align-items:center;padding:clamp(62px,9vw,126px) 0 104px}.eyebrow,.section-kicker{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:10px}.eyebrow:before,.section-kicker:before{content:'';width:28px;height:1px;background:var(--accent)}h1{font-family:var(--display);font-size:clamp(68px,9vw,142px);font-weight:500;line-height:.78;letter-spacing:-.055em;margin:24px 0 35px;max-width:720px}h1 em{font-weight:600;color:var(--accent);font-style:normal}.hero-copy{font-size:17px;line-height:1.55;color:var(--ink-soft);max-width:425px}.hero-meta{display:flex;gap:28px;margin-top:46px;padding-top:15px;border-top:1px solid var(--line);max-width:490px}.meta-item{display:grid;gap:5px}.meta-label{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}.meta-value{font-size:13px}.blueprint-wrap{position:relative;min-height:520px;background:var(--canvas);overflow:hidden}.blueprint-wrap:before{content:'LIVE STUDY / 03';position:absolute;top:18px;left:18px;color:var(--blueprint);opacity:.8;font:10px var(--mono);letter-spacing:.1em;z-index:1}.blueprint-wrap:after{content:'GRADI-ENT / 3D AXON';position:absolute;bottom:18px;right:18px;color:var(--blueprint);opacity:.8;font:10px var(--mono);letter-spacing:.1em;z-index:1}.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(166,195,195,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(166,195,195,.08) 1px,transparent 1px);background-size:34px 34px;transform:perspective(580px) rotateX(57deg) scale(1.5);transform-origin:center 85%;opacity:.65}canvas{position:relative;width:100%;height:520px;display:block;z-index:2}.blueprint-label{position:absolute;left:20px;bottom:18px;color:var(--blueprint);font:10px var(--mono);letter-spacing:.1em;z-index:3}
-  .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:17px;margin-bottom:42px}.section-head h2{font-family:var(--display);font-weight:500;font-size:clamp(42px,6vw,74px);line-height:.85;letter-spacing:-.04em;margin:0}.section-note{font:10px var(--mono);color:var(--ink-soft);letter-spacing:.08em;text-transform:uppercase;text-align:right;line-height:1.7}.projects{padding-bottom:120px}.project-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}.project{position:relative;min-height:370px;background:var(--paper-deep);overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:18px;transition:transform .35s ease}.project:hover{transform:translateY(-7px)}.project:nth-child(1){grid-column:span 7;min-height:495px}.project:nth-child(2){grid-column:span 5}.project:nth-child(3){grid-column:span 5}.project:nth-child(4){grid-column:span 7;min-height:430px}.project-art{position:absolute;inset:0;overflow:hidden}.project-art:before,.project-art:after{content:'';position:absolute;inset:15% 9%;border:1px solid var(--accent);transform:skewY(-13deg) rotate(-2deg);opacity:.75}.project-art:after{inset:27% 18%;border-color:var(--ink);transform:skewY(13deg) rotate(3deg);opacity:.5}.art-2{background:#b7b6a9}.art-2:before{border-color:#3a5558;transform:rotate(45deg) scale(1.25)}.art-2:after{border-color:#cf6b42;transform:rotate(-28deg) scale(.8)}.art-3{background:#9faeb0}.art-3:before{border-color:#f1e6d0;transform:skewY(38deg) rotate(15deg) scale(1.2)}.art-3:after{border-color:#20363a;transform:skewY(-26deg) rotate(-12deg)}.art-4{background:#c9c0ae}.art-4:before{border-color:#344c4f;transform:skewY(-22deg) rotate(32deg) scale(1.3)}.art-4:after{border-color:#cf6b42;transform:skewY(20deg) rotate(-34deg)}.project-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,32,35,.05) 42%,rgba(20,32,35,.8) 100%)}.project-top,.project-bottom{position:relative;z-index:2;display:flex;justify-content:space-between;gap:18px;align-items:start}.project-index{font:10px var(--mono);color:var(--white);letter-spacing:.1em}.project-tag{font:10px var(--mono);color:var(--white);border:1px solid rgba(255,255,255,.6);padding:5px 7px;letter-spacing:.08em;text-transform:uppercase}.project-title{font-family:var(--display);font-size:clamp(34px,4vw,56px);line-height:.82;color:var(--white);font-weight:500;letter-spacing:-.04em}.project-location{font:10px var(--mono);color:var(--accent-soft);margin-top:8px;letter-spacing:.06em;text-transform:uppercase}
-  .manifesto{display:grid;grid-template-columns:.65fr 1.35fr;gap:clamp(30px,9vw,160px);padding:24px 0 120px;border-top:1px solid var(--line)}.manifesto h2{font-family:var(--display);font-weight:500;font-size:clamp(45px,6vw,80px);line-height:.84;letter-spacing:-.05em;margin:0}.manifesto-copy{font-size:clamp(22px,3vw,38px);line-height:1.05;letter-spacing:-.025em;max-width:790px}.manifesto-copy span{color:var(--accent)}.services{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:52px;border-top:1px solid var(--line)}.service{padding:18px 25px 18px 0;border-right:1px solid var(--line)}.service:not(:first-child){padding-left:25px}.service:last-child{border-right:0}.service h3{font:11px var(--mono);letter-spacing:.1em;text-transform:uppercase;margin:0 0 12px;color:var(--accent)}.service p{font-size:14px;line-height:1.45;color:var(--ink-soft);max-width:250px;margin:0}
-  .contact{background:var(--ink);color:var(--paper);padding:62px clamp(24px,5vw,70px);display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:end}.contact h2{font-family:var(--display);font-size:clamp(52px,7vw,100px);font-weight:500;line-height:.78;letter-spacing:-.05em;margin:0}.contact h2 em{color:var(--accent);font-style:normal}.contact-info{display:grid;gap:23px}.contact-line{border-top:1px solid rgba(231,227,216,.3);padding-top:10px;display:flex;justify-content:space-between;gap:20px;font-size:13px}.contact-line span:first-child{font:10px var(--mono);color:var(--accent-soft);text-transform:uppercase;letter-spacing:.1em}.contact-line a:hover{color:var(--accent-soft)}footer{padding:20px 0;display:flex;justify-content:space-between;color:var(--ink-soft);font:10px var(--mono);letter-spacing:.06em;text-transform:uppercase}
-  @media(max-width:760px){body{padding-inline:16px}.topbar{align-items:flex-start;flex-direction:column;gap:14px}.nav{gap:12px;flex-wrap:wrap;justify-content:flex-start;width:100%}.hero{grid-template-columns:1fr;padding-top:40px}.blueprint-wrap,canvas{min-height:390px;height:390px}.hero{padding-bottom:75px}.project-grid{grid-template-columns:1fr}.project,.project:nth-child(1),.project:nth-child(2),.project:nth-child(3),.project:nth-child(4){grid-column:auto;min-height:355px}.manifesto{grid-template-columns:1fr;gap:35px;padding-bottom:80px}.services{grid-template-columns:1fr}.service,.service:not(:first-child){padding:18px 0;border-right:0;border-bottom:1px solid var(--line)}.service:last-child{border-bottom:0}.contact{grid-template-columns:1fr;padding:45px 22px;gap:55px}.contact-line{flex-direction:column;gap:7px}footer{gap:12px;flex-wrap:wrap}}
-  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.project{transition:none}}
+  /* HERO SECTION */
+  .hero{display:grid;grid-template-columns:minmax(0,.86fr) minmax(360px,1.14fr);gap:clamp(32px,7vw,110px);align-items:center;padding:clamp(55px,8vw,115px) 0 95px}
+  .eyebrow,.section-kicker{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:10px}
+  .eyebrow:before,.section-kicker:before{content:'';width:28px;height:1px;background:var(--accent)}
+  h1{font-family:var(--display);font-size:clamp(64px,8.5vw,136px);font-weight:500;line-height:.8;letter-spacing:-.055em;margin:22px 0 32px;max-width:720px}
+  h1 em{font-weight:600;color:var(--accent);font-style:normal}
+  .hero-copy{font-size:16.5px;line-height:1.55;color:var(--ink-soft);max-width:440px}
+  .hero-meta{display:flex;gap:24px;margin-top:42px;padding-top:16px;border-top:1px solid var(--line);max-width:510px;flex-wrap:wrap}
+  .meta-item{display:grid;gap:4px}
+  .meta-label{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+  .meta-value{font-size:13px;font-weight:500}
+  
+  .blueprint-wrap{position:relative;min-height:500px;background:var(--canvas);overflow:hidden;border:1px solid rgba(166,195,195,.15)}
+  .blueprint-wrap:before{content:'LIVE STUDY / 01';position:absolute;top:18px;left:18px;color:var(--blueprint);opacity:.85;font:10px var(--mono);letter-spacing:.1em;z-index:1}
+  .blueprint-wrap:after{content:'GRADIENT / 3D AXON';position:absolute;bottom:18px;right:18px;color:var(--blueprint);opacity:.85;font:10px var(--mono);letter-spacing:.1em;z-index:1}
+  .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(166,195,195,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(166,195,195,.08) 1px,transparent 1px);background-size:34px 34px;transform:perspective(580px) rotateX(57deg) scale(1.5);transform-origin:center 85%;opacity:.65}
+  canvas{position:relative;width:100%;height:500px;display:block;z-index:2}
+  .blueprint-label{position:absolute;left:20px;bottom:18px;color:var(--blueprint);font:10px var(--mono);letter-spacing:.1em;z-index:3}
+
+  /* PROJECTS */
+  .projects{padding-bottom:110px}
+  .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:17px;margin-bottom:38px}
+  .section-head h2{font-family:var(--display);font-weight:500;font-size:clamp(40px,5.5vw,72px);line-height:.85;letter-spacing:-.04em;margin:0}
+  .section-note{font:10px var(--mono);color:var(--ink-soft);letter-spacing:.08em;text-transform:uppercase;text-align:right;line-height:1.7}
+  .project-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+  .project{position:relative;min-height:370px;background:var(--paper-deep);overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:20px;transition:transform .35s ease}
+  .project:hover{transform:translateY(-6px)}
+  .project:nth-child(1){grid-column:span 7;min-height:480px}
+  .project:nth-child(2){grid-column:span 5}
+  .project:nth-child(3){grid-column:span 5}
+  .project:nth-child(4){grid-column:span 7;min-height:420px}
+  .project-art{position:absolute;inset:0;overflow:hidden}
+  .project-art:before,.project-art:after{content:'';position:absolute;inset:15% 9%;border:1px solid var(--accent);transform:skewY(-13deg) rotate(-2deg);opacity:.75}
+  .project-art:after{inset:27% 18%;border-color:var(--ink);transform:skewY(13deg) rotate(3deg);opacity:.5}
+  .art-2{background:#b7b6a9}.art-2:before{border-color:#3a5558;transform:rotate(45deg) scale(1.25)}.art-2:after{border-color:#cf6b42;transform:rotate(-28deg) scale(.8)}
+  .art-3{background:#9faeb0}.art-3:before{border-color:#f1e6d0;transform:skewY(38deg) rotate(15deg) scale(1.2)}.art-3:after{border-color:#20363a;transform:skewY(-26deg) rotate(-12deg)}
+  .art-4{background:#c9c0ae}.art-4:before{border-color:#344c4f;transform:skewY(-22deg) rotate(32deg) scale(1.3)}.art-4:after{border-color:#cf6b42;transform:skewY(20deg) rotate(-34deg)}
+  .project-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,32,35,.05) 35%,rgba(20,32,35,.85) 100%)}
+  .project-top,.project-bottom{position:relative;z-index:2;display:flex;justify-content:space-between;gap:18px;align-items:start}
+  .project-index{font:10px var(--mono);color:var(--white);letter-spacing:.1em}
+  .project-tag{font:10px var(--mono);color:var(--white);border:1px solid rgba(255,255,255,.6);padding:4px 8px;letter-spacing:.08em;text-transform:uppercase}
+  .project-title{font-family:var(--display);font-size:clamp(32px,3.8vw,54px);line-height:.84;color:var(--white);font-weight:500;letter-spacing:-.04em}
+  .project-location{font:10px var(--mono);color:var(--accent-soft);margin-top:8px;letter-spacing:.06em;text-transform:uppercase}
+
+  /* COMPUTATIONAL RESEARCH & BIOMIMICRY LAB SECTION (Reel 9: Arata Isozaki / Arturo Tedeschi) */
+  .lab-section{padding:30px 0 110px;border-top:1px solid var(--line)}
+  .lab-layout{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(30px,6vw,80px);margin-top:35px;align-items:start}
+  .lab-info h3{font-family:var(--display);font-size:clamp(36px,4.5vw,58px);font-weight:500;line-height:.88;letter-spacing:-.04em;margin:12px 0 20px}
+  .lab-info p{font-size:15px;line-height:1.6;color:var(--ink-soft);max-width:500px}
+  .lab-telemetry{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:28px 0;padding:20px;background:var(--paper-deep);border:1px solid var(--line)}
+  .telem-val{font-family:var(--mono);font-size:20px;font-weight:600;color:var(--accent)}
+  .telem-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px}
+  
+  .lab-viewer{background:var(--canvas);border:1px solid rgba(166,195,195,.2);padding:24px;position:relative;display:flex;flex-direction:column;gap:18px}
+  .lab-canvas-wrap{position:relative;height:380px;width:100%;background:#131c1f;overflow:hidden;border:1px solid rgba(166,195,195,.15)}
+  #treeCanvas{width:100%;height:100%;display:block}
+  .lab-controls{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;background:rgba(0,0,0,0.25);padding:16px;border:1px solid rgba(255,255,255,0.08)}
+  .control-group label{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;color:var(--blueprint);letter-spacing:0.06em;margin-bottom:6px;text-transform:uppercase}
+  .control-group input[type="range"]{width:100%;accent-color:var(--accent);cursor:pointer}
+
+  /* MANIFESTO */
+  .manifesto{display:grid;grid-template-columns:.65fr 1.35fr;gap:clamp(30px,9vw,160px);padding:30px 0 110px;border-top:1px solid var(--line)}
+  .manifesto h2{font-family:var(--display);font-weight:500;font-size:clamp(42px,5.8vw,78px);line-height:.84;letter-spacing:-.05em;margin:0}
+  .manifesto-copy{font-size:clamp(20px,2.8vw,36px);line-height:1.1;letter-spacing:-.025em;max-width:790px}
+  .manifesto-copy span{color:var(--accent)}
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:48px;border-top:1px solid var(--line)}
+  .service{padding:18px 22px 18px 0;border-right:1px solid var(--line)}
+  .service:not(:first-child){padding-left:22px}
+  .service:last-child{border-right:0}
+  .service h3{font:11px var(--mono);letter-spacing:.1em;text-transform:uppercase;margin:0 0 12px;color:var(--accent)}
+  .service p{font-size:13.5px;line-height:1.45;color:var(--ink-soft);max-width:250px;margin:0}
+
+  /* CONTACT */
+  .contact{background:var(--ink);color:var(--paper);padding:60px clamp(24px,5vw,70px);display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:end}
+  .contact h2{font-family:var(--display);font-size:clamp(48px,6.5vw,94px);font-weight:500;line-height:.8;letter-spacing:-.05em;margin:0}
+  .contact h2 em{color:var(--accent);font-style:normal}
+  
+  /* FOOTER & SAAS LEGAL SHIELD (Reel 4) */
+  footer{padding:26px 0 10px;display:flex;justify-content:space-between;color:var(--ink-soft);font:10px var(--mono);letter-spacing:.06em;text-transform:uppercase;border-top:1px solid var(--line);margin-top:40px;flex-wrap:wrap;gap:14px}
+  .legal-links{display:flex;gap:18px}
+  .legal-links a{text-decoration:underline;cursor:pointer}
+  .legal-links a:hover{color:var(--accent)}
+
+  /* MODAL LEGAL SHIELD */
+  .modal-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(6px);z-index:999;align-items:center;justify-content:center;padding:20px}
+  .modal-backdrop.open{display:flex}
+  .modal-card{background:var(--paper);color:var(--ink);max-width:640px;width:100%;max-height:85vh;overflow-y:auto;padding:36px;border:1px solid var(--line);position:relative;box-shadow:0 24px 60px rgba(0,0,0,0.3)}
+  .modal-close{position:absolute;top:18px;right:20px;background:none;border:none;font-size:24px;cursor:pointer;color:var(--ink-soft)}
+  .modal-card h3{font-family:var(--display);font-size:32px;margin:0 0 14px;color:var(--ink)}
+  .modal-card p,.modal-card li{font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+  .modal-card ul{padding-left:18px;margin:12px 0}
+
+  @media(max-width:860px){
+    body{padding-inline:16px}
+    .topbar{align-items:flex-start;flex-direction:column;gap:14px}
+    .nav{gap:12px;flex-wrap:wrap;justify-content:flex-start;width:100%}
+    .hero{grid-template-columns:1fr;padding-top:40px}
+    .blueprint-wrap,canvas{min-height:360px;height:360px}
+    .project-grid{grid-template-columns:1fr}
+    .project,.project:nth-child(1),.project:nth-child(2),.project:nth-child(3),.project:nth-child(4){grid-column:auto;min-height:355px}
+    .lab-layout{grid-template-columns:1fr}
+    .manifesto{grid-template-columns:1fr;gap:35px}
+    .services{grid-template-columns:1fr}
+    .service,.service:not(:first-child){padding:18px 0;border-right:0;border-bottom:1px solid var(--line)}
+    .service:last-child{border-bottom:0}
+    .contact{grid-template-columns:1fr;padding:45px 22px;gap:45px}
+  }
   </style>
 </head>
 <body>
@@ -66,101 +176,164 @@
       <span class="brand-name">GradiEnt</span>
       <span class="mark-sub">Studio</span>
     </a>
+    
+    <div class="top-status">
+      <span class="status-dot"></span>
+      <span id="liveClock">MAKASSAR (WITA) --:--:--</span>
+      <span style="border-left:1px solid var(--line);padding-left:10px;color:var(--accent);">GRADIENTARCH.TECH</span>
+    </div>
+
     <nav class="nav" aria-label="Primary navigation">
-      <a href="#projects">Projects</a>
-      <a href="#approach">Approach</a>
+      <a href="#projects">Work</a>
+      <a href="#computational-lab">Lab / 3D</a>
+      <a href="#approach">Manifesto</a>
       <a href="#contact">Contact</a>
       <button class="theme-toggle" id="themeToggle" type="button">Theme: auto</button>
     </nav>
   </header>
 
   <main id="top">
+    <!-- HERO SECTION -->
     <section class="hero">
       <div>
-        <div class="eyebrow">GradiEnt / Est. 2026</div>
+        <div class="eyebrow">GradiEnt Studio / Est. 2026</div>
         <h1>Spaces with<br><em>weather</em> in them.</h1>
-        <p class="hero-copy">GradiEnt is an architectural practice working between landscape, parametric form, and building. We make generous, durable places for the everyday rituals that give a site its meaning.</p>
+        <p class="hero-copy">GradiEnt is an architectural practice and computational design lab. We synthesize environmental physics, biomimetic topology, and tropical materiality to shape enduring spatial sanctuaries.</p>
         <div class="hero-meta">
           <div class="meta-item"><span class="meta-label">Founder & Principal</span><span class="meta-value">Heru Ardiansyah</span></div>
-          <div class="meta-item"><span class="meta-label">Practice</span><span class="meta-value">Architecture + Parametric Design</span></div>
+          <div class="meta-item"><span class="meta-label">Discipline</span><span class="meta-value">Spatial Computing + Biomimicry</span></div>
+          <div class="meta-item"><span class="meta-label">Studio Inquiries</span><span class="meta-value"><a href="mailto:heru@gradientarch.tech" style="color:var(--accent);text-decoration:underline;">heru@gradientarch.tech</a></span></div>
         </div>
       </div>
       <div class="blueprint-wrap" aria-label="Interactive wireframe study of a courtyard building">
         <div class="grid"></div>
         <canvas id="modelCanvas"></canvas>
-        <span class="blueprint-label">COURTYARD HOUSE / AXONOMETRIC STUDY</span>
+        <span class="blueprint-label">PARAMETRIC COURTYARD / AXONOMETRIC TELEMETRY</span>
       </div>
     </section>
 
+    <!-- SELECTED PROJECTS -->
     <section class="projects" id="projects">
       <div class="section-head">
         <div>
           <div class="section-kicker">Selected work / 2024—26</div>
           <h2>Grounded<br>gestures.</h2>
         </div>
-        <div class="section-note">Four studies in<br>light, mass + air</div>
+        <div class="section-note">Four studies in<br>light, mass + thermal air</div>
       </div>
       <div class="project-grid">
         <a class="project" href="#contact">
           <div class="project-art art-1"><div class="project-shade"></div></div>
           <div class="project-top"><span class="project-index">01 / 04</span><span class="project-tag">Built</span></div>
-          <div class="project-bottom"><div><div class="project-title">House for<br>the Long View</div><div class="project-location">Makassar, ID / 2025</div></div></div>
+          <div class="project-bottom"><div><div class="project-title">House for<br>the Long View</div><div class="project-location">Makassar, ID / Daylight Adaptive</div></div></div>
         </a>
         <a class="project" href="#contact">
           <div class="project-art art-2"><div class="project-shade"></div></div>
           <div class="project-top"><span class="project-index">02 / 04</span><span class="project-tag">In progress</span></div>
-          <div class="project-bottom"><div><div class="project-title">Salt<br>Library</div><div class="project-location">South Sulawesi, ID / 2025</div></div></div>
+          <div class="project-bottom"><div><div class="project-title">Salt<br>Library</div><div class="project-location">South Sulawesi, ID / Passive Thermal Mass</div></div></div>
         </a>
         <a class="project" href="#contact">
           <div class="project-art art-3"><div class="project-shade"></div></div>
-          <div class="project-top"><span class="project-index">03 / 04</span><span class="project-tag">Research</span></div>
-          <div class="project-bottom"><div><div class="project-title">Parametric<br>Canopy</div><div class="project-location">Rhino & Grasshopper Study / 2024</div></div></div>
+          <div class="project-top"><span class="project-index">03 / 04</span><span class="project-tag">Computational Lab</span></div>
+          <div class="project-bottom"><div><div class="project-title">Biomimetic<br>Sidra Canopy</div><div class="project-location">Wolff's Law Topology Study / 2026</div></div></div>
         </a>
         <a class="project" href="#contact">
           <div class="project-art art-4"><div class="project-shade"></div></div>
           <div class="project-top"><span class="project-index">04 / 04</span><span class="project-tag">Built</span></div>
-          <div class="project-bottom"><div><div class="project-title">The Quiet<br>Workshop</div><div class="project-location">Gowa, ID / 2024</div></div></div>
+          <div class="project-bottom"><div><div class="project-title">The Quiet<br>Workshop</div><div class="project-location">Gowa, ID / Natural Stack Ventilation</div></div></div>
         </a>
       </div>
     </section>
 
+    <!-- COMPUTATIONAL LAB & BIOMIMICRY TOPOLOGY (Reel 9: Arata Isozaki + Arturo Tedeschi) -->
+    <section class="lab-section" id="computational-lab">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Computational Lab / Research</div>
+          <h2>Evolutionary<br>topology.</h2>
+        </div>
+        <div class="section-note">Wolff's Law (1892) &<br>Generative Load Paths</div>
+      </div>
+
+      <div class="lab-layout">
+        <div class="lab-info">
+          <h3>Form follows stress lines.</h3>
+          <p>
+            Terinspirasi dari pendekatan Arata Isozaki dan Mutsuro Sasaki pada <em>Qatar National Convention Centre</em> serta Teori Bedah Julius Wolff (1892), GradiEnt Studio memanfaatkan komputasi evolusioner untuk menumbuhkan struktur kolom penopang sesuai jalur tegangan beban nyata.
+          </p>
+          <div class="lab-telemetry">
+            <div>
+              <div class="telem-val" id="massReduction">38.4%</div>
+              <div class="telem-lbl">Volume Material Saved</div>
+            </div>
+            <div>
+              <div class="telem-val" id="daylightFactor">450 Lux</div>
+              <div class="telem-lbl">Natural Daylight (SNI)</div>
+            </div>
+          </div>
+          <p style="font-size:13px;color:var(--ink-soft);font-family:var(--mono);">
+            • Algoritma: Evolutionary Structural Optimization (ESO / FEA)<br>
+            • Rujukan: Arturo Tedeschi, Algorithms-Aided Design (Ch. 10)
+          </p>
+        </div>
+
+        <div class="lab-viewer">
+          <div class="lab-canvas-wrap">
+            <canvas id="treeCanvas"></canvas>
+          </div>
+          <div class="lab-controls">
+            <div class="control-group">
+              <label>Stress Load: <span id="loadVal">650 kN</span></label>
+              <input type="range" id="loadSlider" min="200" max="1200" value="650" step="50">
+            </div>
+            <div class="control-group">
+              <label>Branch Hierarchy: <span id="genVal">Gen 4</span></label>
+              <input type="range" id="genSlider" min="2" max="5" value="4" step="1">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MANIFESTO -->
     <section class="manifesto" id="approach">
       <div>
         <div class="section-kicker">Point of view</div>
         <h2>Read the<br>site first.</h2>
       </div>
       <div>
-        <p class="manifesto-copy">We start with what is already there: <span>a prevailing wind, a stone wall, the way water leaves a mark.</span> Architecture follows as a precise act of attention.</p>
+        <p class="manifesto-copy">We start with what is already there: <span>a prevailing tropical wind, intense solar azimuth, the way water marks porous stone.</span> Architecture is an act of calibrated attention.</p>
         <div class="services">
-          <div class="service"><h3>01 / Observe</h3><p>Climate studies, material surveys, and conversations with the people who know a place by heart.</p></div>
-          <div class="service"><h3>02 / Frame</h3><p>Clear spatial systems that turn constraints into atmosphere, rhythm, and long-term value.</p></div>
-          <div class="service"><h3>03 / Make</h3><p>Close collaboration from first sketch to final threshold, with craft held to the same standard as concept.</p></div>
+          <div class="service"><h3>01 / Observe</h3><p>Climate telemetry, solar radiation audits, and material microclimates native to Sulawesi.</p></div>
+          <div class="service"><h3>02 / Compute</h3><p>Generative spatial algorithms, daylight factor optimization (SNI), and structural efficiency.</p></div>
+          <div class="service"><h3>03 / Craft</h3><p>Precision detailing from digital BIM geometry to tactile construction thresholds.</p></div>
         </div>
       </div>
     </section>
 
+    <!-- CONTACT FORM -->
     <section class="contact" id="contact">
       <div>
         <h2>Have a site<br>with <em>weather?</em></h2>
-        <p style="font-size:15px;line-height:1.6;color:var(--ink-soft);max-width:440px;margin-top:24px;">
-          Diskusikan rencana tapak, sayembara, atau eksplorasi arsitektur bersama GradiEnt Studio. Tinggalkan detail Anda di formulir untuk konsultasi langsung.
+        <p style="font-size:15px;line-height:1.6;color:var(--paper-deep);max-width:440px;margin-top:24px;">
+          Diskusikan proyek arsitektur, sayembara, atau eksplorasi komputasi spasial bersama GradiEnt Studio.
         </p>
-        <div style="margin-top:35px;font-family:var(--mono);font-size:10px;color:var(--accent);display:flex;align-items:center;gap:10px;">
-          <span style="width:8px;height:8px;border-radius:50%;background:#2ea44f;display:inline-block;box-shadow:0 0 8px #2ea44f;"></span>
-          STUDIO TELEMETRY / VISITOR ANALYTICS: ACTIVE
+        <div style="margin-top:35px;font-family:var(--mono);font-size:10px;color:var(--accent-soft);display:flex;align-items:center;gap:10px;">
+          <span style="width:8px;height:8px;border-radius:50%;background:var(--success);display:inline-block;box-shadow:0 0 8px var(--success);"></span>
+          OFFICIAL WORKSPACE: GRADIENTARCH.TECH ACTIVE
         </div>
       </div>
 
-      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);padding:32px;border-radius:4px;">
+      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.12);padding:32px;border-radius:4px;">
         <h3 style="font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin:0 0 20px;">Formulir Konsultasi Proyek</h3>
         <form id="inquiryForm" onsubmit="event.preventDefault();sendInquiry();" style="display:grid;gap:16px;">
           <div>
             <label style="display:block;font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-soft);margin-bottom:6px;">Nama Lengkap / Instansi *</label>
-            <input type="text" id="clientName" required placeholder="Nama Anda / Perusahaan" style="width:100%;padding:11px 13px;background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.15);color:var(--paper);font-family:var(--body);font-size:13px;border-radius:2px;outline:none;">
+            <input type="text" id="clientName" required placeholder="Nama Anda / Perusahaan" style="width:100%;padding:11px 13px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.15);color:var(--paper);font-family:var(--body);font-size:13px;border-radius:2px;outline:none;">
           </div>
           <div>
             <label style="display:block;font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-soft);margin-bottom:6px;">Nomor WhatsApp / Email Kontak *</label>
-            <input type="text" id="clientContact" required placeholder="08xxxxxxxxxx atau email aktif" style="width:100%;padding:11px 13px;background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.15);color:var(--paper);font-family:var(--body);font-size:13px;border-radius:2px;outline:none;">
+            <input type="text" id="clientContact" required placeholder="08xxxxxxxxxx atau email resmi" style="width:100%;padding:11px 13px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.15);color:var(--paper);font-family:var(--body);font-size:13px;border-radius:2px;outline:none;">
           </div>
           <div>
             <label style="display:block;font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-soft);margin-bottom:6px;">Kategori Pekerjaan</label>
@@ -168,13 +341,13 @@
               <option value="Rumah Tinggal / Private Residence">Rumah Tinggal / Private Residence</option>
               <option value="Bangunan Komersial / Cafe / Hospitality">Bangunan Komersial / Cafe / Hospitality</option>
               <option value="Desain Parametrik & Masterplanning">Desain Parametrik & Masterplanning</option>
-              <option value="Renovasi Spasial & Interior">Renovasi Spasial & Interior</option>
-              <option value="Kolaborasi Riset / Sayembara">Kolaborasi Riset / Sayembara</option>
+              <option value="Simulasi Daylighting & Fasad Kinetik">Simulasi Daylighting & Fasad Kinetik</option>
+              <option value="Kolaborasi Riset / Sayembara Arsitektur">Kolaborasi Riset / Sayembara Arsitektur</option>
             </select>
           </div>
           <div>
-            <label style="display:block;font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-soft);margin-bottom:6px;">Rencana Lokasi & Deskripsi Singkat</label>
-            <textarea id="clientNotes" rows="3" placeholder="Ceritakan sedikit tentang lokasi lahan, luasan, atau kebutuhan ruang..." style="width:100%;padding:11px 13px;background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.15);color:var(--paper);font-family:var(--body);font-size:13px;border-radius:2px;outline:none;resize:vertical;"></textarea>
+            <label style="display:block;font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-soft);margin-bottom:6px;">Deskripsi Singkat / Lokasi Tapak</label>
+            <textarea id="clientNotes" rows="3" placeholder="Ceritakan luasan lahan, orientasi matahari, atau kebutuhan ruang..." style="width:100%;padding:11px 13px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.15);color:var(--paper);font-family:var(--body);font-size:13px;border-radius:2px;outline:none;resize:vertical;"></textarea>
           </div>
           <button type="submit" style="background:var(--accent);color:var(--white);border:none;padding:13px 20px;font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;font-weight:600;display:flex;align-items:center;justify-content:center;gap:10px;margin-top:6px;transition:opacity 0.2s;">
             <span>Kirim via WhatsApp Direct</span>
@@ -182,7 +355,7 @@
           </button>
         </form>
         <div style="margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:11px;color:var(--accent-soft);font-family:var(--mono);">
-          <span>Email: <a href="mailto:heruardiansyah2one@gmail.com" style="color:inherit;text-decoration:underline;">heruardiansyah2one@gmail.com</a></span>
+          <span>Email: <a href="mailto:heru@gradientarch.tech" style="color:inherit;text-decoration:underline;">heru@gradientarch.tech</a></span>
           <span>WhatsApp: <a href="https://wa.me/6285143628550" target="_blank" style="color:inherit;text-decoration:underline;">+62 851-4362-8550</a></span>
           <span>Makassar, Indonesia</span>
         </div>
@@ -190,39 +363,198 @@
     </section>
   </main>
 
+  <!-- FOOTER & 6-POINT SAAS LEGAL SHIELD (Reel 4) -->
   <footer>
-    <span>© 2026 GradiEnt Studio — Heru Ardiansyah</span>
-    <span>Built slowly, drawn clearly.</span>
+    <div>
+      <span>© 2026 GradiEnt Studio — Heru Ardiansyah</span>
+      <span style="margin-left:14px;color:var(--accent);">gradientarch.tech</span>
+    </div>
+    <div class="legal-links">
+      <a onclick="openLegalModal('privacy')">Privacy Policy</a>
+      <a onclick="openLegalModal('terms')">Terms of Practice</a>
+      <a onclick="openLegalModal('dmca')">DMCA & IP Notice</a>
+    </div>
   </footer>
 </div>
 
+<!-- MODAL LEGAL SHIELD -->
+<div class="modal-backdrop" id="legalModal" onclick="if(event.target===this)closeLegalModal();">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeLegalModal()">×</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
 <script>
+/* 1. CLOCK */
+function updateClock(){
+  const now = new Date();
+  const options = { timeZone: 'Asia/Makassar', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
+  const str = now.toLocaleTimeString('id-ID', options);
+  document.getElementById('liveClock').textContent = 'MAKASSAR (WITA) ' + str;
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+/* 2. HERO WIREFRAME CANVAS */
 const canvas=document.getElementById('modelCanvas'),ctx=canvas.getContext('2d'),wrap=canvas.parentElement;
-let w=0,h=0,rx=-.22,ry=.52,targetX=.52,targetY=-.22,raf;
+let w=0,h=0,rx=-.22,ry=.52,targetX=.52,targetY=-.22;
 const points=[[-1,-.75,-.8],[1,-.75,-.8],[1,-.75,.8],[-1,-.75,.8],[-1,.85,-.8],[1,.85,-.8],[1,.85,.8],[-1,.85,.8],[-.45,.85,-.38],[.45,.85,-.38],[.45,.85,.38],[-.45,.85,.38],[-.45,-.75,-.38],[.45,-.75,-.38],[.45,-.75,.38],[-.45,-.75,.38]];
 const edges=[[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7],[8,9],[9,10],[10,11],[11,8],[12,13],[13,14],[14,15],[15,12],[8,12],[9,13],[10,14],[11,15],[4,8],[5,9],[6,10],[7,11]];
 function resize(){const d=devicePixelRatio||1;w=wrap.clientWidth;h=canvas.clientHeight;canvas.width=w*d;canvas.height=h*d;ctx.setTransform(d,0,0,d,0,0)}
 function project(p){let [x,y,z]=p,cy=Math.cos(ry),sy=Math.sin(ry),cx=Math.cos(rx),sx=Math.sin(rx);let x1=x*cy-z*sy,z1=x*sy+z*cy,y1=y*cx-z1*sx,z2=y*sx+z1*cx;let scale=220/(z2+4.7);return [w/2+x1*scale,h/2+y1*scale]}
-function draw(){rx+=(targetX-rx)*.035;ry+=(targetY-ry)*.035;ctx.clearRect(0,0,w,h);const accent=getComputedStyle(document.documentElement).getPropertyValue('--accent').trim(),blue=getComputedStyle(document.documentElement).getPropertyValue('--blueprint').trim();ctx.lineWidth=1;edges.forEach((e,i)=>{const a=project(points[e[0]]),b=project(points[e[1]]);ctx.beginPath();ctx.moveTo(...a);ctx.lineTo(...b);ctx.strokeStyle=i>11?accent:blue;ctx.globalAlpha=i>11?.9:.7;ctx.stroke()});points.forEach((p,i)=>{const q=project(p);ctx.beginPath();ctx.arc(q[0],q[1],i>7?2:2.7,0,Math.PI*2);ctx.fillStyle=i>7?accent:blue;ctx.globalAlpha=.95;ctx.fill()});ctx.globalAlpha=1;raf=requestAnimationFrame(draw)}
-canvas.addEventListener('pointermove',e=>{const r=canvas.getBoundingClientRect();targetY=(e.clientX-r.left)/r.width*1.5-.75;targetX=(e.clientY-r.top)/r.height*.8-.4});canvas.addEventListener('pointerleave',()=>{targetX=-.22;targetY=.52});window.addEventListener('resize',resize);resize();draw();
-const root=document.documentElement,toggle=document.getElementById('themeToggle');let theme='auto';try{theme=localStorage.getItem('gradient-theme')||'auto'}catch(e){}function applyTheme(){if(theme==='auto')root.removeAttribute('data-theme');else root.dataset.theme=theme;toggle.textContent='Theme: '+theme}toggle.addEventListener('click',()=>{theme=theme==='auto'?'dark':theme==='dark'?'light':'auto';try{localStorage.setItem('gradient-theme',theme)}catch(e){}applyTheme()});applyTheme();
+function draw(){
+  rx+=(targetX-rx)*.035;ry+=(targetY-ry)*.035;ctx.clearRect(0,0,w,h);
+  const accent=getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
+  const blue=getComputedStyle(document.documentElement).getPropertyValue('--blueprint').trim();
+  ctx.lineWidth=1;
+  edges.forEach((e,i)=>{
+    const a=project(points[e[0]]),b=project(points[e[1]]);
+    ctx.beginPath();ctx.moveTo(...a);ctx.lineTo(...b);
+    ctx.strokeStyle=i>11?accent:blue;ctx.globalAlpha=i>11?.9:.7;ctx.stroke();
+  });
+  points.forEach((p,i)=>{
+    const q=project(p);ctx.beginPath();ctx.arc(q[0],q[1],i>7?2:2.7,0,Math.PI*2);
+    ctx.fillStyle=i>7?accent:blue;ctx.globalAlpha=.95;ctx.fill();
+  });
+  ctx.globalAlpha=1;requestAnimationFrame(draw);
+}
+canvas.addEventListener('pointermove',e=>{const r=canvas.getBoundingClientRect();targetY=(e.clientX-r.left)/r.width*1.5-.75;targetX=(e.clientY-r.top)/r.height*.8-.4});
+canvas.addEventListener('pointerleave',()=>{targetX=-.22;targetY=.52});
+window.addEventListener('resize',resize);
+resize();draw();
 
+/* 3. BIOMIMICRY TOPOLOGY & WOLFF'S LAW GENERATOR (Reel 9) */
+const tCanvas = document.getElementById('treeCanvas');
+const tCtx = tCanvas.getContext('2d');
+let tW = 0, tH = 0;
+let loadStress = 650;
+let hierarchyGen = 4;
+let angleOff = 0;
+
+function resizeTree(){
+  const d = devicePixelRatio || 1;
+  tW = tCanvas.parentElement.clientWidth;
+  tH = tCanvas.parentElement.clientHeight;
+  tCanvas.width = tW * d;
+  tCanvas.height = tH * d;
+  tCtx.setTransform(d, 0, 0, d, 0, 0);
+}
+
+function drawBranch(x, y, len, angle, depth) {
+  if (depth === 0) return;
+  const rad = (angle * Math.PI) / 180;
+  const x2 = x + len * Math.sin(rad);
+  const y2 = y - len * Math.cos(rad);
+
+  // Wolff's law stress color gradient: high load = terracotta accent, low load = blueprint cyan
+  const stressRatio = depth / hierarchyGen;
+  tCtx.lineWidth = Math.max(1, depth * 1.6 * (loadStress / 650));
+  tCtx.strokeStyle = stressRatio > 0.6 ? '#cf6b42' : '#a6c3c3';
+  tCtx.globalAlpha = 0.5 + 0.5 * stressRatio;
+
+  tCtx.beginPath();
+  tCtx.moveTo(x, y);
+  tCtx.lineTo(x2, y2);
+  tCtx.stroke();
+
+  // Branch split angles influenced by stress load
+  const spread = 24 + (loadStress / 1200) * 16 + Math.sin(angleOff + depth) * 2;
+  const lenScale = 0.74;
+
+  drawBranch(x2, y2, len * lenScale, angle - spread, depth - 1);
+  drawBranch(x2, y2, len * lenScale, angle + spread, depth - 1);
+}
+
+function renderTree() {
+  tCtx.clearRect(0, 0, tW, tH);
+  angleOff += 0.015;
+  const rootX = tW / 2;
+  const rootY = tH - 24;
+  const baseLen = tH * 0.28;
+
+  // Draw soil / foundation anchor
+  tCtx.strokeStyle = '#a6c3c3';
+  tCtx.lineWidth = 1;
+  tCtx.beginPath();
+  tCtx.moveTo(rootX - 40, rootY);
+  tCtx.lineTo(rootX + 40, rootY);
+  tCtx.stroke();
+
+  drawBranch(rootX, rootY, baseLen, 0, hierarchyGen);
+  requestAnimationFrame(renderTree);
+}
+
+document.getElementById('loadSlider').addEventListener('input', function(e){
+  loadStress = parseInt(e.target.value);
+  document.getElementById('loadVal').textContent = loadStress + ' kN';
+  const saved = (25 + (loadStress / 1200) * 22).toFixed(1);
+  document.getElementById('massReduction').textContent = saved + '%';
+});
+
+document.getElementById('genSlider').addEventListener('input', function(e){
+  hierarchyGen = parseInt(e.target.value);
+  document.getElementById('genVal').textContent = 'Gen ' + hierarchyGen;
+  const lux = (320 + hierarchyGen * 45);
+  document.getElementById('daylightFactor').textContent = lux + ' Lux';
+});
+
+window.addEventListener('resize', resizeTree);
+resizeTree();
+renderTree();
+
+/* 4. THEME TOGGLE */
+const root=document.documentElement,toggle=document.getElementById('themeToggle');let theme='auto';try{theme=localStorage.getItem('gradient-theme')||'auto'}catch(e){}
+function applyTheme(){if(theme==='auto')root.removeAttribute('data-theme');else root.dataset.theme=theme;toggle.textContent='Theme: '+theme}
+toggle.addEventListener('click',()=>{theme=theme==='auto'?'dark':theme==='dark'?'light':'auto';try{localStorage.setItem('gradient-theme',theme)}catch(e){}applyTheme()});
+applyTheme();
+
+/* 5. INQUIRY HANDLER */
 function sendInquiry(){
   const name = document.getElementById('clientName').value.trim();
   const contact = document.getElementById('clientContact').value.trim();
   const type = document.getElementById('projectType').value;
   const notes = document.getElementById('clientNotes').value.trim();
-
-  const msg = `Halo GradiEnt Studio!\nSaya *${name}* (${contact}) ingin konsultasi arsitektur:\n• Kategori: *${type}*\n• Lokasi & Detail: ${notes || '-'}\n\nMohon informasi waktu luang untuk sesi konsultasi awal. Terima kasih!`;
-
-  // Send GA4 Event if configured
-  if(typeof gtag==='function'){
-    gtag('event','generate_lead',{'event_category':'inquiry','event_label':type,'value':1});
-  }
-
-  // Open WhatsApp with pre-filled lead details
+  const msg = `Halo GradiEnt Studio!\nSaya *${name}* (${contact}) ingin konsultasi arsitektur:\n• Kategori: *${type}*\n• Lokasi & Detail: ${notes || '-'}\n\nMohon informasi sesi konsultasi awal via gradientarch.tech. Terima kasih!`;
+  if(typeof gtag==='function'){gtag('event','generate_lead',{'event_category':'inquiry','event_label':type,'value':1});}
   window.open(`https://wa.me/6285143628550?text=${encodeURIComponent(msg)}`,'_blank');
 }
+
+/* 6. LEGAL SHIELD MODALS (Reel 4) */
+function openLegalModal(type){
+  const body = document.getElementById('modalBody');
+  if(type==='privacy'){
+    body.innerHTML = `
+      <h3>Privacy Policy</h3>
+      <p><strong>GradiEnt Studio (gradientarch.tech)</strong> respects client privacy and enforces strict data minimization standards:</p>
+      <ul>
+        <li><strong>No Invasive Session Replay:</strong> We strictly avoid third-party invasive session recording software in compliance with global privacy regulations.</li>
+        <li><strong>Zero Data Brokerage:</strong> Client architectural proposals and contact data are never sold, rented, or distributed.</li>
+        <li><strong>Encrypted Communications:</strong> Official inquiries sent to <code>heru@gradientarch.tech</code> are protected by TLS transmission standards.</li>
+      </ul>
+      <p style="font-size:11px;font-family:var(--mono);">Last updated: October 2026 · Makassar, Indonesia</p>
+    `;
+  } else if(type==='terms'){
+    body.innerHTML = `
+      <h3>Terms of Practice</h3>
+      <p><strong>Professional Architectural & Computational Design Services:</strong></p>
+      <ul>
+        <li>All preliminary schematic sketches and daylighting simulations are exploratory spatial studies subject to certified professional engineer (PE / IAI) verification.</li>
+        <li>Parametric Grasshopper and structural topology models are calibrated in accordance with Indonesian National Standards (SNI) and IBC codes.</li>
+      </ul>
+      <p style="font-size:11px;font-family:var(--mono);">Studio Registration: GradiEnt Studio · Principal: Heru Ardiansyah</p>
+    `;
+  } else {
+    body.innerHTML = `
+      <h3>DMCA & Intellectual Property</h3>
+      <p>All design concepts, kinetic canopy geometries, daylighting diagrams, and photography showcased on <strong>gradientarch.tech</strong> are the exclusive intellectual property of <strong>Heru Ardiansyah / GradiEnt Studio</strong>.</p>
+      <p>For IP inquiries, copyright licensing, or academic research collaboration, contact our designated agent at <a href="mailto:heru@gradientarch.tech" style="color:var(--accent);text-decoration:underline;">heru@gradientarch.tech</a>.</p>
+      <p style="font-size:11px;font-family:var(--mono);">Registered Entity: GradiEnt Studio · Makassar, Indonesia</p>
+    `;
+  }
+  document.getElementById('legalModal').classList.add('open');
+}
+function closeLegalModal(){document.getElementById('legalModal').classList.remove('open');}
 </script>
 
 </body>
