@@ -65,7 +65,13 @@
   h1{font-family:var(--display);font-size:clamp(64px,8.5vw,136px);font-weight:500;line-height:.8;letter-spacing:-.055em;margin:22px 0 32px;max-width:720px}
   h1 em{font-weight:600;color:var(--accent);font-style:normal}
   .hero-copy{font-size:16.5px;line-height:1.55;color:var(--ink-soft);max-width:440px}
-  .hero-meta{display:flex;gap:24px;margin-top:42px;padding-top:16px;border-top:1px solid var(--line);max-width:510px;flex-wrap:wrap}
+  .hero-actions{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+  .btn-primary{background:var(--accent);color:var(--white);padding:11px 20px;font:11px var(--mono);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;font-weight:600;border:1px solid var(--accent);transition:all .2s ease;display:inline-flex;align-items:center;gap:8px}
+  .btn-primary:hover{background:transparent;color:var(--ink)}
+  .btn-secondary{background:transparent;color:var(--ink);padding:11px 20px;font:11px var(--mono);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid var(--line);transition:all .2s ease;display:inline-flex;align-items:center;gap:8px}
+  .btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+
+  .hero-meta{display:flex;gap:24px;margin-top:36px;padding-top:16px;border-top:1px solid var(--line);max-width:510px;flex-wrap:wrap}
   .meta-item{display:grid;gap:4px}
   .meta-label{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
   .meta-value{font-size:13px;font-weight:500}
@@ -99,10 +105,11 @@
   .project-top,.project-bottom{position:relative;z-index:2;display:flex;justify-content:space-between;gap:18px;align-items:start}
   .project-index{font:10px var(--mono);color:var(--white);letter-spacing:.1em}
   .project-tag{font:10px var(--mono);color:var(--white);border:1px solid rgba(255,255,255,.6);padding:4px 8px;letter-spacing:.08em;text-transform:uppercase}
+  .project-metric{font:9px var(--mono);letter-spacing:.08em;color:var(--blueprint);background:rgba(20,32,35,0.75);padding:3px 8px;border:1px solid rgba(166,195,195,0.3);margin-bottom:8px;display:inline-block;text-transform:uppercase}
   .project-title{font-family:var(--display);font-size:clamp(32px,3.8vw,54px);line-height:.84;color:var(--white);font-weight:500;letter-spacing:-.04em}
   .project-location{font:10px var(--mono);color:var(--accent-soft);margin-top:8px;letter-spacing:.06em;text-transform:uppercase}
 
-  /* COMPUTATIONAL RESEARCH & BIOMIMICRY LAB SECTION (Reel 9: Arata Isozaki / Arturo Tedeschi) */
+  /* COMPUTATIONAL RESEARCH & ADAPTIVE FACADE LAB */
   .lab-section{padding:30px 0 110px;border-top:1px solid var(--line)}
   .lab-layout{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(30px,6vw,80px);margin-top:35px;align-items:start}
   .lab-info h3{font-family:var(--display);font-size:clamp(36px,4.5vw,58px);font-weight:500;line-height:.88;letter-spacing:-.04em;margin:12px 0 20px}
@@ -113,7 +120,7 @@
   
   .lab-viewer{background:var(--canvas);border:1px solid rgba(166,195,195,.2);padding:24px;position:relative;display:flex;flex-direction:column;gap:18px}
   .lab-canvas-wrap{position:relative;height:380px;width:100%;background:#131c1f;overflow:hidden;border:1px solid rgba(166,195,195,.15)}
-  #treeCanvas{width:100%;height:100%;display:block}
+  #facadeCanvas{width:100%;height:100%;display:block}
   .lab-controls{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;background:rgba(0,0,0,0.25);padding:16px;border:1px solid rgba(255,255,255,0.08)}
   .control-group label{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;color:var(--blueprint);letter-spacing:0.06em;margin-bottom:6px;text-transform:uppercase}
   .control-group input[type="range"]{width:100%;accent-color:var(--accent);cursor:pointer}
@@ -198,7 +205,13 @@
       <div>
         <div class="eyebrow">GradiEnt Studio / Est. 2026</div>
         <h1>Spaces with<br><em>weather</em> in them.</h1>
-        <p class="hero-copy">GradiEnt is an architectural practice and computational design lab. GradiEnt synthesizes environmental physics, adaptive kinetic building envelopes, and machine learning daylighting models to shape enduring spatial sanctuaries.</p>
+        <p class="hero-copy">Most modern buildings are sealed glass boxes fighting the tropics with oversized air conditioning. GradiEnt designs architecture that listens: calibrating adaptive envelopes, equatorial sun paths, and passive wind vectors into enduring spatial sanctuaries.</p>
+        
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">Explore Selected Work ↓</a>
+          <a href="#contact" class="btn-secondary">Initiate Feasibility Study →</a>
+        </div>
+
         <div class="hero-meta">
           <div class="meta-item"><span class="meta-label">Founder & Principal</span><span class="meta-value">Heru Ardiansyah</span></div>
           <div class="meta-item"><span class="meta-label">Discipline</span><span class="meta-value">Spatial Computing + Adaptive Kinetic Envelopes</span></div>
@@ -225,22 +238,46 @@
         <a class="project" href="#contact">
           <div class="project-art art-1"><div class="project-shade"></div></div>
           <div class="project-top"><span class="project-index">01 / 04</span><span class="project-tag">Built</span></div>
-          <div class="project-bottom"><div><div class="project-title">House for<br>the Long View</div><div class="project-location">Makassar, ID / Daylight Adaptive</div></div></div>
+          <div class="project-bottom">
+            <div>
+              <div class="project-metric">42% PEAK COOLING REDUCTION · POROUS VERANDA</div>
+              <div class="project-title">House for<br>the Long View</div>
+              <div class="project-location">Makassar, ID / Daylight Adaptive</div>
+            </div>
+          </div>
         </a>
         <a class="project" href="#contact">
           <div class="project-art art-2"><div class="project-shade"></div></div>
           <div class="project-top"><span class="project-index">02 / 04</span><span class="project-tag">In progress</span></div>
-          <div class="project-bottom"><div><div class="project-title">Salt<br>Library</div><div class="project-location">South Sulawesi, ID / Passive Thermal Mass</div></div></div>
+          <div class="project-bottom">
+            <div>
+              <div class="project-metric">18h THERMAL MASS RETENTION · RAMMED EARTH</div>
+              <div class="project-title">Salt<br>Library</div>
+              <div class="project-location">South Sulawesi, ID / Passive Thermal Mass</div>
+            </div>
+          </div>
         </a>
         <a class="project" href="#computational-lab">
           <div class="project-art art-3"><div class="project-shade"></div></div>
           <div class="project-top"><span class="project-index">03 / 04</span><span class="project-tag">Core Research</span></div>
-          <div class="project-bottom"><div><div class="project-title">Mattoanging<br>Community Hub</div><div class="project-location">Adaptive Kinetic Facade & ML Daylighting / Makassar 2026</div></div></div>
+          <div class="project-bottom">
+            <div>
+              <div class="project-metric">sDA 84.2% · ML SURROGATE CONTROL · SNI 6197</div>
+              <div class="project-title">Mattoanging<br>Community Hub</div>
+              <div class="project-location">Adaptive Kinetic Facade & ML Daylighting / Makassar 2026</div>
+            </div>
+          </div>
         </a>
         <a class="project" href="#contact">
           <div class="project-art art-4"><div class="project-shade"></div></div>
           <div class="project-top"><span class="project-index">04 / 04</span><span class="project-tag">Built</span></div>
-          <div class="project-bottom"><div><div class="project-title">The Quiet<br>Workshop</div><div class="project-location">Gowa, ID / Natural Stack Ventilation</div></div></div>
+          <div class="project-bottom">
+            <div>
+              <div class="project-metric">100% PASSIVE STACK VENTILATION · TIMBER CORE</div>
+              <div class="project-title">The Quiet<br>Workshop</div>
+              <div class="project-location">Gowa, ID / Natural Stack Ventilation</div>
+            </div>
+          </div>
         </a>
       </div>
     </section>
@@ -249,17 +286,17 @@
     <section class="lab-section" id="computational-lab">
       <div class="section-head">
         <div>
-          <div class="section-kicker">Computational Lab / GradiEnt Research</div>
+          <div class="section-kicker">02 / Computational Lab & Research</div>
           <h2>Adaptive kinetic<br>envelope.</h2>
         </div>
-        <div class="section-note">Machine Learning &<br>Solar Daylighting (SNI)</div>
+        <div class="section-note">Solar Trajectory vs<br>Tropical Thermal Glare</div>
       </div>
 
       <div class="lab-layout">
         <div class="lab-info">
-          <h3>Surrogate AI meets tropical solar paths.</h3>
+          <h3>The Tropical Daylighting Paradox.</h3>
           <p>
-            Riset inti GradiEnt Studio dan karya perancangan <strong>Mattoanging Community Hub</strong> oleh Heru Ardiansyah: Mengintegrasikan fasad kinetik adaptif dengan kontrol surrogate model Machine Learning (ANN & XGBoost) untuk mengoptimasi distribusi pencahayaan alami dan memitigasi silau surya khatulistiwa di Makassar.
+            In equatorial Sulawesi, unfiltered sunlight provides abundant lumen—until afternoon glare forces occupants to pull blinds and switch on artificial lighting. In the <strong>Mattoanging Community Hub</strong> master research, Heru Ardiansyah engineered an adaptive kinetic building envelope governed by surrogate machine learning (ANN & XGBoost). Louvers continuously track equatorial sun vectors, bouncing daylight deep across 0.75m desk planes while eliminating direct solar heat.
           </p>
           <div class="lab-telemetry">
             <div>
@@ -280,9 +317,9 @@
             </div>
           </div>
           <p style="font-size:13px;color:var(--ink-soft);font-family:var(--mono);margin-top:16px;line-height:1.7;">
-            • Aktuator: Rotary Servo (θ: 0°—90°) & Linear Actuator<br>
-            • Material: Marine-Grade AA6063-T6 (Reflektansi Light-Shelf R ≥ 80%)<br>
-            • Kalibrasi Iklim: EPW Makassar-Paotere (-5,15° LS / 119,41° BT)
+            • Actuator System: Rotary Servo (θ: 0°—90°) & Linear Vertex Actuator<br>
+            • Material: Marine-Grade AA6063-T6 (Specular Light-Shelf R ≥ 80%)<br>
+            • Climatic Calibration: EPW Makassar-Paotere (-5.15° S / 119.41° E)
           </p>
         </div>
 
@@ -317,9 +354,9 @@
       <div>
         <p class="manifesto-copy">GradiEnt starts with what is already there: <span>a prevailing tropical wind, intense solar azimuth, the way water marks porous stone.</span> Architecture is an act of calibrated attention.</p>
         <div class="services">
-          <div class="service"><h3>01 / Observe</h3><p>Climate telemetry, solar radiation audits, and material microclimates native to Sulawesi.</p></div>
-          <div class="service"><h3>02 / Compute</h3><p>Generative spatial algorithms, daylight factor optimization (SNI), and structural efficiency.</p></div>
-          <div class="service"><h3>03 / Craft</h3><p>Precision detailing from digital BIM geometry to tactile construction thresholds.</p></div>
+          <div class="service"><h3>01 / Microclimate Telemetry</h3><p>Solar azimuth mapping, EPW wind velocity vectors, and humidity audits before sketching the first line.</p></div>
+          <div class="service"><h3>02 / Daylighting Computation</h3><p>Surrogate AI models calibrated to SNI 03-6197 and ANSI/IES LM-83-23 to eliminate glare and mechanical overcooling.</p></div>
+          <div class="service"><h3>03 / Tactile Craftsmanship</h3><p>Translating digital geometry into marine-grade AA6063 aluminium, local porous brick, and enduring timber thresholds.</p></div>
         </div>
       </div>
     </section>
@@ -327,9 +364,10 @@
     <!-- CONTACT FORM -->
     <section class="contact" id="contact">
       <div>
+        <div class="section-kicker" style="color:var(--accent-soft);margin-bottom:12px;">Direct Engagement</div>
         <h2>Have a site<br>with <em>weather?</em></h2>
-        <p style="font-size:15px;line-height:1.6;color:var(--paper-deep);max-width:440px;margin-top:24px;">
-          Diskusikan proyek arsitektur, sayembara, atau eksplorasi komputasi spasial bersama GradiEnt Studio.
+        <p style="font-size:15px;line-height:1.6;color:var(--paper-deep);max-width:440px;margin-top:20px;">
+          Whether commissioning a private residence, developing a climate-resilient commercial hub, or auditing building performance for SNI compliance—GradiEnt delivers grounded spatial solutions.
         </p>
         <div style="margin-top:35px;font-family:var(--mono);font-size:10px;color:var(--accent-soft);display:flex;align-items:center;gap:10px;">
           <span style="width:8px;height:8px;border-radius:50%;background:var(--success);display:inline-block;box-shadow:0 0 8px var(--success);"></span>
