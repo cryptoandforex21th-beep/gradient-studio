@@ -1,766 +1,141 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GradiEnt — Architecture & Spatial Studio</title>
-  <meta name="description" content="Tactile Architectural Practice & Computational Spatial Lab by Heru Ardiansyah. Climate, parametric form, biomimicry topology, and spatial harmony.">
-  <link rel="canonical" href="https://gradientarch.tech/">
-  
-  <!-- Open Graph / Social Preview -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="GradiEnt — Architecture & Spatial Studio">
-  <meta property="og:description" content="Tactile Architectural Practice by Heru Ardiansyah. Climate, parametric form, biomimicry topology, and spatial harmony.">
-  <meta property="og:url" content="https://gradientarch.tech/">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="GradiEnt — Architecture & Spatial Studio">
-  <meta name="twitter:description" content="Tactile Architectural Practice by Heru Ardiansyah. Climate-adaptive architecture and computational spatial design.">
-  
-  <!-- Web Analytics: Google Analytics 4 (GA4) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W4GTB1CP38"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-W4GTB1CP38');
-  </script>
-  <!-- Zero-Config Client Telemetry (GoatCounter) -->
-  <script data-goatcounter="https://gradient-studio.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f9f8f4">
+<meta name="robots" content="index,follow">
+<title>GradiEnt Studio — Arsitektur & Desain Spasial Makassar</title>
+<meta name="description" content="GradiEnt Studio, praktik arsitektur dan desain spasial di Makassar oleh Heru Ardiansyah. Konsep ruang kontekstual, studi tapak dan pencahayaan alami, serta pemodelan 3D.">
+<link rel="canonical" href="https://gradientarch.tech/">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-  :root{
-    --ink:#172126;--ink-soft:#526168;--paper:#e7e3d8;--paper-deep:#d3cec1;--line:#b8b3a7;
-    --accent:#cf6b42;--accent-soft:#e8ae88;--blueprint:#a6c3c3;--canvas:#26383c;--white:#f7f3ea;
-    --success:#2ea44f;
-    --display:'Cormorant Garamond',Georgia,serif;--body:'IBM Plex Sans',Arial,sans-serif;--mono:'IBM Plex Mono',monospace;
-  }
-  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#e7e3d8;--ink-soft:#abb5b3;--paper:#172126;--paper-deep:#223035;--line:#46575a;--canvas:#0f1b1e;--white:#f7f3ea;--blueprint:#9bc3c2}}
-  :root[data-theme="dark"]{--ink:#e7e3d8;--ink-soft:#abb5b3;--paper:#172126;--paper-deep:#223035;--line:#46575a;--canvas:#0f1b1e;--white:#f7f3ea;--blueprint:#9bc3c2}
-  *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);padding:0 20px 48px;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
-  .site{max-width:1320px;margin:auto}
-  
-  /* TOPBAR & STATUS BADGE */
-  .topbar{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:22px 0 18px;gap:22px}
-  .mark{font-family:var(--display);font-size:clamp(30px,3.8vw,42px);font-weight:700;letter-spacing:-0.03em;display:flex;align-items:center;gap:14px;line-height:1;transition:transform .3s ease}
-  .mark:hover{transform:scale(1.02)}
-  .mark .brand-name{background:linear-gradient(135deg, var(--ink) 30%, var(--accent) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-  .mark-dot{width:11px;height:11px;background:var(--accent);display:inline-block;border-radius:50%;box-shadow:0 0 14px var(--accent)}
-  .mark-sub{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-left:4px;padding-left:12px;border-left:1px solid var(--line)}
-  
-  .top-status{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:10px;color:var(--ink-soft);letter-spacing:0.06em}
-  .status-dot{width:7px;height:7px;background:var(--success);border-radius:50%;display:inline-block;box-shadow:0 0 8px var(--success);animation:pulse 2s infinite}
-  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.85)}}
+<!-- Open Graph / Social Preview -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="GradiEnt Studio — Arsitektur & Desain Spasial Makassar">
+<meta property="og:description" content="GradiEnt Studio, praktik arsitektur dan desain spasial di Makassar oleh Heru Ardiansyah. Konsep ruang kontekstual, studi tapak dan pencahayaan alami, serta pemodelan 3D.">
+<meta property="og:url" content="https://gradientarch.tech/">
+<meta property="og:image" content="https://gradientarch.tech/assets/courtyard-concept.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GradiEnt Studio — Arsitektur & Desain Spasial Makassar">
+<meta name="twitter:description" content="GradiEnt Studio, praktik arsitektur dan desain spasial di Makassar oleh Heru Ardiansyah.">
 
-  .nav{display:flex;gap:22px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);align-items:center}
-  .nav a{transition:color .2s}.nav a:hover{color:var(--accent)}.theme-toggle{border:1px solid var(--line);background:transparent;padding:6px 10px;cursor:pointer;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;transition:all .2s}.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
-  
-  /* HERO SECTION */
-  .hero{display:grid;grid-template-columns:minmax(0,.86fr) minmax(360px,1.14fr);gap:clamp(32px,7vw,110px);align-items:center;padding:clamp(55px,8vw,115px) 0 95px}
-  .eyebrow,.section-kicker{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:10px}
-  .eyebrow:before,.section-kicker:before{content:'';width:28px;height:1px;background:var(--accent)}
-  h1{font-family:var(--display);font-size:clamp(64px,8.5vw,136px);font-weight:500;line-height:.8;letter-spacing:-.055em;margin:22px 0 32px;max-width:720px}
-  h1 em{font-weight:600;color:var(--accent);font-style:normal}
-  .hero-copy{font-size:16.5px;line-height:1.55;color:var(--ink-soft);max-width:440px}
-  .hero-actions{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
-  .btn-primary{background:var(--accent);color:var(--white);padding:11px 20px;font:11px var(--mono);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;font-weight:600;border:1px solid var(--accent);transition:all .2s ease;display:inline-flex;align-items:center;gap:8px}
-  .btn-primary:hover{background:transparent;color:var(--ink)}
-  .btn-secondary{background:transparent;color:var(--ink);padding:11px 20px;font:11px var(--mono);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid var(--line);transition:all .2s ease;display:inline-flex;align-items:center;gap:8px}
-  .btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
-
-  .hero-meta{display:flex;gap:24px;margin-top:36px;padding-top:16px;border-top:1px solid var(--line);max-width:510px;flex-wrap:wrap}
-  .meta-item{display:grid;gap:4px}
-  .meta-label{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
-  .meta-value{font-size:13px;font-weight:500}
-  
-  .blueprint-wrap{position:relative;min-height:500px;background:var(--canvas);overflow:hidden;border:1px solid rgba(166,195,195,.15)}
-  .blueprint-wrap:before{content:'LIVE STUDY / 01';position:absolute;top:18px;left:18px;color:var(--blueprint);opacity:.85;font:10px var(--mono);letter-spacing:.1em;z-index:1}
-  .blueprint-wrap:after{content:'GRADIENT / 3D AXON';position:absolute;bottom:18px;right:18px;color:var(--blueprint);opacity:.85;font:10px var(--mono);letter-spacing:.1em;z-index:1}
-  .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(166,195,195,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(166,195,195,.08) 1px,transparent 1px);background-size:34px 34px;transform:perspective(580px) rotateX(57deg) scale(1.5);transform-origin:center 85%;opacity:.65}
-  canvas{position:relative;width:100%;height:500px;display:block;z-index:2}
-  .blueprint-label{position:absolute;left:20px;bottom:18px;color:var(--blueprint);font:10px var(--mono);letter-spacing:.1em;z-index:3}
-
-  /* PROJECTS */
-  .projects{padding-bottom:110px}
-  .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:17px;margin-bottom:38px}
-  .section-head h2{font-family:var(--display);font-weight:500;font-size:clamp(40px,5.5vw,72px);line-height:.85;letter-spacing:-.04em;margin:0}
-  .section-note{font:10px var(--mono);color:var(--ink-soft);letter-spacing:.08em;text-transform:uppercase;text-align:right;line-height:1.7}
-  .project-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
-  .project{position:relative;min-height:370px;background:var(--paper-deep);overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:20px;transition:transform .35s ease}
-  .project:hover{transform:translateY(-6px)}
-  .project:nth-child(1){grid-column:span 7;min-height:480px}
-  .project:nth-child(2){grid-column:span 5}
-  .project:nth-child(3){grid-column:span 5}
-  .project:nth-child(4){grid-column:span 7;min-height:420px}
-  .project-art{position:absolute;inset:0;overflow:hidden}
-  .project-art:before,.project-art:after{content:'';position:absolute;inset:15% 9%;border:1px solid var(--accent);transform:skewY(-13deg) rotate(-2deg);opacity:.75}
-  .project-art:after{inset:27% 18%;border-color:var(--ink);transform:skewY(13deg) rotate(3deg);opacity:.5}
-  .art-2{background:#b7b6a9}.art-2:before{border-color:#3a5558;transform:rotate(45deg) scale(1.25)}.art-2:after{border-color:#cf6b42;transform:rotate(-28deg) scale(.8)}
-  .art-3{background:#9faeb0}.art-3:before{border-color:#f1e6d0;transform:skewY(38deg) rotate(15deg) scale(1.2)}.art-3:after{border-color:#20363a;transform:skewY(-26deg) rotate(-12deg)}
-  .art-4{background:#c9c0ae}.art-4:before{border-color:#344c4f;transform:skewY(-22deg) rotate(32deg) scale(1.3)}.art-4:after{border-color:#cf6b42;transform:skewY(20deg) rotate(-34deg)}
-  .project-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,32,35,.05) 35%,rgba(20,32,35,.85) 100%)}
-  .project-top,.project-bottom{position:relative;z-index:2;display:flex;justify-content:space-between;gap:18px;align-items:start}
-  .project-index{font:10px var(--mono);color:var(--white);letter-spacing:.1em}
-  .project-tag{font:10px var(--mono);color:var(--white);border:1px solid rgba(255,255,255,.6);padding:4px 8px;letter-spacing:.08em;text-transform:uppercase}
-  .project-metric{font:9px var(--mono);letter-spacing:.08em;color:var(--blueprint);background:rgba(20,32,35,0.75);padding:3px 8px;border:1px solid rgba(166,195,195,0.3);margin-bottom:8px;display:inline-block;text-transform:uppercase}
-  .project-title{font-family:var(--display);font-size:clamp(32px,3.8vw,54px);line-height:.84;color:var(--white);font-weight:500;letter-spacing:-.04em}
-  .project-location{font:10px var(--mono);color:var(--accent-soft);margin-top:8px;letter-spacing:.06em;text-transform:uppercase}
-
-  /* COMPUTATIONAL RESEARCH & ADAPTIVE FACADE LAB */
-  .lab-section{padding:30px 0 110px;border-top:1px solid var(--line)}
-  .lab-layout{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(30px,6vw,80px);margin-top:35px;align-items:start}
-  .lab-info h3{font-family:var(--display);font-size:clamp(36px,4.5vw,58px);font-weight:500;line-height:.88;letter-spacing:-.04em;margin:12px 0 20px}
-  .lab-info p{font-size:15px;line-height:1.6;color:var(--ink-soft);max-width:500px}
-  .lab-telemetry{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:28px 0;padding:20px;background:var(--paper-deep);border:1px solid var(--line)}
-  .telem-val{font-family:var(--mono);font-size:20px;font-weight:600;color:var(--accent)}
-  .telem-lbl{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px}
-  
-  .lab-viewer{background:var(--canvas);border:1px solid rgba(166,195,195,.2);padding:24px;position:relative;display:flex;flex-direction:column;gap:18px}
-  .lab-canvas-wrap{position:relative;height:380px;width:100%;background:#131c1f;overflow:hidden;border:1px solid rgba(166,195,195,.15)}
-  #facadeCanvas{width:100%;height:100%;display:block}
-  .lab-controls{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;background:rgba(0,0,0,0.25);padding:16px;border:1px solid rgba(255,255,255,0.08)}
-  .control-group label{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;color:var(--blueprint);letter-spacing:0.06em;margin-bottom:6px;text-transform:uppercase}
-  .control-group input[type="range"]{width:100%;accent-color:var(--accent);cursor:pointer}
-
-  /* MANIFESTO */
-  .manifesto{display:grid;grid-template-columns:.65fr 1.35fr;gap:clamp(30px,9vw,160px);padding:30px 0 110px;border-top:1px solid var(--line)}
-  .manifesto h2{font-family:var(--display);font-weight:500;font-size:clamp(42px,5.8vw,78px);line-height:.84;letter-spacing:-.05em;margin:0}
-  .manifesto-copy{font-size:clamp(20px,2.8vw,36px);line-height:1.1;letter-spacing:-.025em;max-width:790px}
-  .manifesto-copy span{color:var(--accent)}
-  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:48px;border-top:1px solid var(--line)}
-  .service{padding:18px 22px 18px 0;border-right:1px solid var(--line)}
-  .service:not(:first-child){padding-left:22px}
-  .service:last-child{border-right:0}
-  .service h3{font:11px var(--mono);letter-spacing:.1em;text-transform:uppercase;margin:0 0 12px;color:var(--accent)}
-  .service p{font-size:13.5px;line-height:1.45;color:var(--ink-soft);max-width:250px;margin:0}
-
-  /* CONTACT */
-  .contact{background:var(--ink);color:var(--paper);padding:60px clamp(24px,5vw,70px);display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:end}
-  .contact h2{font-family:var(--display);font-size:clamp(48px,6.5vw,94px);font-weight:500;line-height:.8;letter-spacing:-.05em;margin:0}
-  .contact h2 em{color:var(--accent);font-style:normal}
-  
-  /* FOOTER & SAAS LEGAL SHIELD (Reel 4) */
-  footer{padding:26px 0 10px;display:flex;justify-content:space-between;color:var(--ink-soft);font:10px var(--mono);letter-spacing:.06em;text-transform:uppercase;border-top:1px solid var(--line);margin-top:40px;flex-wrap:wrap;gap:14px}
-  .legal-links{display:flex;gap:18px}
-  .legal-links a{text-decoration:underline;cursor:pointer}
-  .legal-links a:hover{color:var(--accent)}
-
-  /* MODAL LEGAL SHIELD */
-  .modal-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(6px);z-index:999;align-items:center;justify-content:center;padding:20px}
-  .modal-backdrop.open{display:flex}
-  .modal-card{background:var(--paper);color:var(--ink);max-width:640px;width:100%;max-height:85vh;overflow-y:auto;padding:36px;border:1px solid var(--line);position:relative;box-shadow:0 24px 60px rgba(0,0,0,0.3)}
-  .modal-close{position:absolute;top:18px;right:20px;background:none;border:none;font-size:24px;cursor:pointer;color:var(--ink-soft)}
-  .modal-card h3{font-family:var(--display);font-size:32px;margin:0 0 14px;color:var(--ink)}
-  .modal-card p,.modal-card li{font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
-  .modal-card ul{padding-left:18px;margin:12px 0}
-
-  @media(max-width:860px){
-    body{padding-inline:16px}
-    .topbar{align-items:flex-start;flex-direction:column;gap:14px}
-    .nav{gap:12px;flex-wrap:wrap;justify-content:flex-start;width:100%}
-    .hero{grid-template-columns:1fr;padding-top:40px}
-    .blueprint-wrap,canvas{min-height:360px;height:360px}
-    .project-grid{grid-template-columns:1fr}
-    .project,.project:nth-child(1),.project:nth-child(2),.project:nth-child(3),.project:nth-child(4){grid-column:auto;min-height:355px}
-    .lab-layout{grid-template-columns:1fr}
-    .manifesto{grid-template-columns:1fr;gap:35px}
-    .services{grid-template-columns:1fr}
-    .service,.service:not(:first-child){padding:18px 0;border-right:0;border-bottom:1px solid var(--line)}
-    .service:last-child{border-bottom:0}
-    .contact{grid-template-columns:1fr;padding:45px 22px;gap:45px}
-  }
-  </style>
-</head>
-<body>
-
-<div class="site">
-  <header class="topbar">
-    <a class="mark" href="#top">
-      <i class="mark-dot"></i>
-      <span class="brand-name">GradiEnt</span>
-      <span class="mark-sub">Studio</span>
-    </a>
-    
-    <div class="top-status">
-      <span class="status-dot"></span>
-      <span id="liveClock">MAKASSAR (WITA) --:--:--</span>
-      <span style="border-left:1px solid var(--line);padding-left:10px;color:var(--accent);">GRADIENTARCH.TECH</span>
-    </div>
-
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="#projects">Work</a>
-      <a href="#computational-lab">Lab / 3D</a>
-      <a href="#approach">Manifesto</a>
-      <a href="#contact">Contact</a>
-      <button class="theme-toggle" id="themeToggle" type="button">Theme: auto</button>
-    </nav>
-  </header>
-
-  <main id="top">
-    <!-- HERO SECTION -->
-    <section class="hero">
-      <div>
-        <div class="eyebrow">GradiEnt Studio / Est. 2026</div>
-        <h1>Spaces with<br><em>weather</em> in them.</h1>
-        <p class="hero-copy">Most modern buildings are sealed glass boxes fighting the tropics with oversized air conditioning. GradiEnt designs architecture that listens: calibrating adaptive envelopes, equatorial sun paths, and passive wind vectors into enduring spatial sanctuaries.</p>
-        
-        <div class="hero-actions">
-          <a href="#projects" class="btn-primary">Explore Selected Work ↓</a>
-          <a href="#contact" class="btn-secondary">Initiate Feasibility Study →</a>
-        </div>
-
-        <div class="hero-meta">
-          <div class="meta-item"><span class="meta-label">Founder & Principal</span><span class="meta-value">Heru Ardiansyah</span></div>
-          <div class="meta-item"><span class="meta-label">Discipline</span><span class="meta-value">Spatial Computing + Adaptive Kinetic Envelopes</span></div>
-          <div class="meta-item"><span class="meta-label">Studio Inquiries</span><span class="meta-value"><a href="mailto:heru@gradientarch.tech" style="color:var(--accent);text-decoration:underline;">heru@gradientarch.tech</a></span></div>
-        </div>
-      </div>
-      <div class="blueprint-wrap" aria-label="Interactive wireframe study of a courtyard building">
-        <div class="grid"></div>
-        <canvas id="modelCanvas"></canvas>
-        <span class="blueprint-label">PARAMETRIC COURTYARD / AXONOMETRIC TELEMETRY</span>
-      </div>
-    </section>
-
-    <!-- SELECTED PROJECTS -->
-    <section class="projects" id="projects">
-      <div class="section-head">
-        <div>
-          <div class="section-kicker">Selected work / 2024—26</div>
-          <h2>Grounded<br>gestures.</h2>
-        </div>
-        <div class="section-note">Four studies in<br>light, mass + thermal air</div>
-      </div>
-      <div class="project-grid">
-        <a class="project" href="#contact">
-          <div class="project-art art-1"><div class="project-shade"></div></div>
-          <div class="project-top"><span class="project-index">01 / 04</span><span class="project-tag">Built</span></div>
-          <div class="project-bottom">
-            <div>
-              <div class="project-metric">42% PEAK COOLING REDUCTION · POROUS VERANDA</div>
-              <div class="project-title">House for<br>the Long View</div>
-              <div class="project-location">Makassar, ID / Daylight Adaptive</div>
-            </div>
-          </div>
-        </a>
-        <a class="project" href="#contact">
-          <div class="project-art art-2"><div class="project-shade"></div></div>
-          <div class="project-top"><span class="project-index">02 / 04</span><span class="project-tag">In progress</span></div>
-          <div class="project-bottom">
-            <div>
-              <div class="project-metric">18h THERMAL MASS RETENTION · RAMMED EARTH</div>
-              <div class="project-title">Salt<br>Library</div>
-              <div class="project-location">South Sulawesi, ID / Passive Thermal Mass</div>
-            </div>
-          </div>
-        </a>
-        <a class="project" href="#computational-lab">
-          <div class="project-art art-3"><div class="project-shade"></div></div>
-          <div class="project-top"><span class="project-index">03 / 04</span><span class="project-tag">Core Research</span></div>
-          <div class="project-bottom">
-            <div>
-              <div class="project-metric">sDA 84.2% · ML SURROGATE CONTROL · SNI 6197</div>
-              <div class="project-title">Mattoanging<br>Community Hub</div>
-              <div class="project-location">Adaptive Kinetic Facade & ML Daylighting / Makassar 2026</div>
-            </div>
-          </div>
-        </a>
-        <a class="project" href="#contact">
-          <div class="project-art art-4"><div class="project-shade"></div></div>
-          <div class="project-top"><span class="project-index">04 / 04</span><span class="project-tag">Built</span></div>
-          <div class="project-bottom">
-            <div>
-              <div class="project-metric">100% PASSIVE STACK VENTILATION · TIMBER CORE</div>
-              <div class="project-title">The Quiet<br>Workshop</div>
-              <div class="project-location">Gowa, ID / Natural Stack Ventilation</div>
-            </div>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- COMPUTATIONAL LAB & ADAPTIVE KINETIC ENVELOPE (Heru Ardiansyah - Mattoanging Community Hub) -->
-    <section class="lab-section" id="computational-lab">
-      <div class="section-head">
-        <div>
-          <div class="section-kicker">02 / Computational Lab & Research</div>
-          <h2>Adaptive kinetic<br>envelope.</h2>
-        </div>
-        <div class="section-note">Solar Trajectory vs<br>Tropical Thermal Glare</div>
-      </div>
-
-      <div class="lab-layout">
-        <div class="lab-info">
-          <h3>The Tropical Daylighting Paradox.</h3>
-          <p>
-            In equatorial Sulawesi, unfiltered sunlight provides abundant lumen—until afternoon glare forces occupants to pull blinds and switch on artificial lighting. In the <strong>Mattoanging Community Hub</strong> master research, Heru Ardiansyah engineered an adaptive kinetic building envelope governed by surrogate machine learning (ANN & XGBoost). Louvers continuously track equatorial sun vectors, bouncing daylight deep across 0.75m desk planes while eliminating direct solar heat.
-          </p>
-          <div class="lab-telemetry">
-            <div>
-              <div class="telem-val" id="luxTelemetry">425 Lux</div>
-              <div class="telem-lbl">Workplane Illuminance (SNI 6197)</div>
-            </div>
-            <div>
-              <div class="telem-val" id="sdaTelemetry">84.2%</div>
-              <div class="telem-lbl">sDA 300,50% (LM-83-23)</div>
-            </div>
-            <div>
-              <div class="telem-val" id="aseTelemetry">3.8%</div>
-              <div class="telem-lbl">ASE &lt; 10% (Anti-Glare)</div>
-            </div>
-            <div>
-              <div class="telem-val" id="angleTelemetry">48.0°</div>
-              <div class="telem-lbl">Kinematic Louver Angle (θ)</div>
-            </div>
-          </div>
-          <p style="font-size:13px;color:var(--ink-soft);font-family:var(--mono);margin-top:16px;line-height:1.7;">
-            • Actuator System: Rotary Servo (θ: 0°—90°) & Linear Vertex Actuator<br>
-            • Material: Marine-Grade AA6063-T6 (Specular Light-Shelf R ≥ 80%)<br>
-            • Climatic Calibration: EPW Makassar-Paotere (-5.15° S / 119.41° E)
-          </p>
-        </div>
-
-        <div class="lab-viewer">
-          <div class="lab-canvas-wrap">
-            <canvas id="facadeCanvas"></canvas>
-          </div>
-          <div class="lab-controls">
-            <div class="control-group">
-              <label>Solar Time: <span id="timeVal">13:30 WITA</span></label>
-              <input type="range" id="timeSlider" min="8" max="17" value="13.5" step="0.25">
-            </div>
-            <div class="control-group">
-              <label>Louver Rotation (θ): <span id="angleVal">48°</span></label>
-              <input type="range" id="angleSlider" min="0" max="90" value="48" step="1">
-            </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;">
-              <button id="aiToggleBtn" type="button" style="background:var(--accent);color:var(--white);border:none;padding:7px 14px;font-family:var(--mono);font-size:10px;letter-spacing:0.1em;cursor:pointer;border-radius:2px;font-weight:600;">AI AUTO-TRACK (ANN): ACTIVE</button>
-              <span id="facadeStatus" style="font-family:var(--mono);font-size:10px;color:var(--accent-soft);">STATUS: OPTIMAL GLARE-FREE</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MANIFESTO -->
-    <section class="manifesto" id="approach">
-      <div>
-        <div class="section-kicker">Point of view</div>
-        <h2>Read the<br>site first.</h2>
-      </div>
-      <div>
-        <p class="manifesto-copy">GradiEnt starts with what is already there: <span>a prevailing tropical wind, intense solar azimuth, the way water marks porous stone.</span> Architecture is an act of calibrated attention.</p>
-        <div class="services">
-          <div class="service"><h3>01 / Microclimate Telemetry</h3><p>Solar azimuth mapping, EPW wind velocity vectors, and humidity audits before sketching the first line.</p></div>
-          <div class="service"><h3>02 / Daylighting Computation</h3><p>Surrogate AI models calibrated to SNI 03-6197 and ANSI/IES LM-83-23 to eliminate glare and mechanical overcooling.</p></div>
-          <div class="service"><h3>03 / Tactile Craftsmanship</h3><p>Translating digital geometry into marine-grade AA6063 aluminium, local porous brick, and enduring timber thresholds.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT FORM -->
-    <section class="contact" id="contact">
-      <div>
-        <div class="section-kicker" style="color:var(--accent-soft);margin-bottom:12px;">Direct Engagement</div>
-        <h2>Have a site<br>with <em>weather?</em></h2>
-        <p style="font-size:15px;line-height:1.6;color:var(--paper-deep);max-width:440px;margin-top:20px;">
-          Whether commissioning a private residence, developing a climate-resilient commercial hub, or auditing building performance for SNI compliance—GradiEnt delivers grounded spatial solutions.
-        </p>
-        <div style="margin-top:35px;font-family:var(--mono);font-size:10px;color:var(--accent-soft);display:flex;align-items:center;gap:10px;">
-          <span style="width:8px;height:8px;border-radius:50%;background:var(--success);display:inline-block;box-shadow:0 0 8px var(--success);"></span>
-          OFFICIAL WORKSPACE: GRADIENTARCH.TECH ACTIVE
-        </div>
-      </div>
-
-      <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.12);padding:32px;border-radius:4px;">
-        <h3 style="font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin:0 0 20px;">Formulir Konsultasi Proyek</h3>
-        <form id="inquiryForm" onsubmit="event.preventDefault();sendInquiry();" style="display:grid;gap:16px;">
-          <div>
-            <label style="display:block;font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-soft);margin-bottom:6px;">Nama Lengkap / Instansi *</label>
-            <input type="text" id="clientName" required placeholder="Nama Anda / Perusahaan" style="width:100%;padding:11px 13px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.15);color:var(--paper);font-family:var(--body);font-size:13px;border-radius:2px;outline:none;">
-          </div>
-          <div>
-            <label style="display:block;font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-soft);margin-bottom:6px;">Nomor WhatsApp / Email Kontak *</label>
-            <input type="text" id="clientContact" required placeholder="08xxxxxxxxxx atau email resmi" style="width:100%;padding:11px 13px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.15);color:var(--paper);font-family:var(--body);font-size:13px;border-radius:2px;outline:none;">
-          </div>
-          <div>
-            <label style="display:block;font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-soft);margin-bottom:6px;">Kategori Pekerjaan</label>
-            <select id="projectType" style="width:100%;padding:11px 13px;background:#172126;border:1px solid rgba(255,255,255,0.15);color:var(--paper);font-family:var(--body);font-size:13px;border-radius:2px;outline:none;">
-              <option value="Rumah Tinggal / Private Residence">Rumah Tinggal / Private Residence</option>
-              <option value="Bangunan Komersial / Cafe / Hospitality">Bangunan Komersial / Cafe / Hospitality</option>
-              <option value="Desain Parametrik & Masterplanning">Desain Parametrik & Masterplanning</option>
-              <option value="Simulasi Daylighting & Fasad Kinetik">Simulasi Daylighting & Fasad Kinetik</option>
-              <option value="Kolaborasi Riset / Sayembara Arsitektur">Kolaborasi Riset / Sayembara Arsitektur</option>
-            </select>
-          </div>
-          <div>
-            <label style="display:block;font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-soft);margin-bottom:6px;">Deskripsi Singkat / Lokasi Tapak</label>
-            <textarea id="clientNotes" rows="3" placeholder="Ceritakan luasan lahan, orientasi matahari, atau kebutuhan ruang..." style="width:100%;padding:11px 13px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.15);color:var(--paper);font-family:var(--body);font-size:13px;border-radius:2px;outline:none;resize:vertical;"></textarea>
-          </div>
-          <button type="submit" style="background:var(--accent);color:var(--white);border:none;padding:13px 20px;font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;font-weight:600;display:flex;align-items:center;justify-content:center;gap:10px;margin-top:6px;transition:opacity 0.2s;">
-            <span>Kirim via WhatsApp Direct</span>
-            <span>→</span>
-          </button>
-        </form>
-        <div style="margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:11px;color:var(--accent-soft);font-family:var(--mono);">
-          <span>Email: <a href="mailto:heru@gradientarch.tech" style="color:inherit;text-decoration:underline;">heru@gradientarch.tech</a></span>
-          <span>WhatsApp: <a href="https://wa.me/6285143628550" target="_blank" style="color:inherit;text-decoration:underline;">+62 851-4362-8550</a></span>
-          <span>Makassar, Indonesia</span>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER & 6-POINT SAAS LEGAL SHIELD (Reel 4) -->
-  <footer>
-    <div>
-      <span>© 2026 GradiEnt Studio — Heru Ardiansyah</span>
-      <span style="margin-left:14px;color:var(--accent);">gradientarch.tech</span>
-    </div>
-    <div class="legal-links">
-      <a onclick="openLegalModal('privacy')">Privacy Policy</a>
-      <a onclick="openLegalModal('terms')">Terms of Practice</a>
-      <a onclick="openLegalModal('dmca')">DMCA & IP Notice</a>
-    </div>
-  </footer>
-</div>
-
-<!-- MODAL LEGAL SHIELD -->
-<div class="modal-backdrop" id="legalModal" onclick="if(event.target===this)closeLegalModal();">
-  <div class="modal-card">
-    <button class="modal-close" onclick="closeLegalModal()">×</button>
-    <div id="modalBody"></div>
-  </div>
-</div>
-
+<!-- Web Analytics: Google Analytics 4 (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W4GTB1CP38"></script>
 <script>
-/* 1. CLOCK */
-function updateClock(){
-  const now = new Date();
-  const options = { timeZone: 'Asia/Makassar', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
-  const str = now.toLocaleTimeString('id-ID', options);
-  document.getElementById('liveClock').textContent = 'MAKASSAR (WITA) ' + str;
-}
-setInterval(updateClock, 1000);
-updateClock();
-
-/* 2. HERO WIREFRAME CANVAS */
-const canvas=document.getElementById('modelCanvas'),ctx=canvas.getContext('2d'),wrap=canvas.parentElement;
-let w=0,h=0,rx=-.22,ry=.52,targetX=.52,targetY=-.22;
-const points=[[-1,-.75,-.8],[1,-.75,-.8],[1,-.75,.8],[-1,-.75,.8],[-1,.85,-.8],[1,.85,-.8],[1,.85,.8],[-1,.85,.8],[-.45,.85,-.38],[.45,.85,-.38],[.45,.85,.38],[-.45,.85,.38],[-.45,-.75,-.38],[.45,-.75,-.38],[.45,-.75,.38],[-.45,-.75,.38]];
-const edges=[[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7],[8,9],[9,10],[10,11],[11,8],[12,13],[13,14],[14,15],[15,12],[8,12],[9,13],[10,14],[11,15],[4,8],[5,9],[6,10],[7,11]];
-function resize(){const d=devicePixelRatio||1;w=wrap.clientWidth;h=canvas.clientHeight;canvas.width=w*d;canvas.height=h*d;ctx.setTransform(d,0,0,d,0,0)}
-function project(p){let [x,y,z]=p,cy=Math.cos(ry),sy=Math.sin(ry),cx=Math.cos(rx),sx=Math.sin(rx);let x1=x*cy-z*sy,z1=x*sy+z*cy,y1=y*cx-z1*sx,z2=y*sx+z1*cx;let scale=220/(z2+4.7);return [w/2+x1*scale,h/2+y1*scale]}
-function draw(){
-  rx+=(targetX-rx)*.035;ry+=(targetY-ry)*.035;ctx.clearRect(0,0,w,h);
-  const accent=getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
-  const blue=getComputedStyle(document.documentElement).getPropertyValue('--blueprint').trim();
-  ctx.lineWidth=1;
-  edges.forEach((e,i)=>{
-    const a=project(points[e[0]]),b=project(points[e[1]]);
-    ctx.beginPath();ctx.moveTo(...a);ctx.lineTo(...b);
-    ctx.strokeStyle=i>11?accent:blue;ctx.globalAlpha=i>11?.9:.7;ctx.stroke();
-  });
-  points.forEach((p,i)=>{
-    const q=project(p);ctx.beginPath();ctx.arc(q[0],q[1],i>7?2:2.7,0,Math.PI*2);
-    ctx.fillStyle=i>7?accent:blue;ctx.globalAlpha=.95;ctx.fill();
-  });
-  ctx.globalAlpha=1;requestAnimationFrame(draw);
-}
-canvas.addEventListener('pointermove',e=>{const r=canvas.getBoundingClientRect();targetY=(e.clientX-r.left)/r.width*1.5-.75;targetX=(e.clientY-r.top)/r.height*.8-.4});
-canvas.addEventListener('pointerleave',()=>{targetX=-.22;targetY=.52});
-window.addEventListener('resize',resize);
-resize();draw();
-
-/* 3. ADAPTIVE KINETIC FACADE & DAYLIGHT ML SIMULATOR (Mattoanging Community Hub) */
-const fCanvas = document.getElementById('facadeCanvas');
-const fCtx = fCanvas.getContext('2d');
-let fW = 0, fH = 0;
-let solarHour = 13.5; // 13:30 WITA
-let louverAngle = 48; // degrees (0 = open horizontal, 90 = closed vertical)
-let aiAutoTrack = true;
-
-function resizeFacade(){
-  const d = devicePixelRatio || 1;
-  fW = fCanvas.parentElement.clientWidth;
-  fH = fCanvas.parentElement.clientHeight;
-  fCanvas.width = fW * d;
-  fCanvas.height = fH * d;
-  fCtx.setTransform(d, 0, 0, d, 0, 0);
-}
-
-function computeSurrogateAI(hour){
-  let optAngle = 20;
-  if (hour < 11.5) {
-    optAngle = 18 + (hour - 8) * 6;
-  } else if (hour <= 13.5) {
-    optAngle = 38 + (hour - 11.5) * 6;
-  } else {
-    optAngle = 50 + (hour - 13.5) * 8.5;
-  }
-  return Math.min(85, Math.max(15, Math.round(optAngle)));
-}
-
-function updateTelemetry(){
-  const sHour = Math.floor(solarHour);
-  const sMin = Math.round((solarHour - sHour) * 60);
-  const timeStr = `${sHour.toString().padStart(2,'0')}:${sMin.toString().padStart(2,'0')} WITA`;
-  document.getElementById('timeVal').textContent = timeStr;
-  document.getElementById('angleVal').textContent = Math.round(louverAngle) + '°';
-  document.getElementById('angleTelemetry').textContent = louverAngle.toFixed(1) + '°';
-
-  const baseLux = 850;
-  const shadingFactor = Math.cos((louverAngle * Math.PI) / 180);
-  const sunFactor = Math.sin(((solarHour - 8) / 9) * Math.PI);
-  let lux = Math.round(300 + (baseLux * shadingFactor * sunFactor * 0.45));
-  if (lux < 280) lux = 280;
-  if (lux > 820) lux = 820;
-
-  document.getElementById('luxTelemetry').textContent = lux + ' Lux';
-
-  const sda = Math.min(94, Math.max(76, (88 - Math.abs(lux - 420) * 0.05))).toFixed(1);
-  const ase = (Math.max(1.8, (lux > 550 ? (lux - 550) * 0.04 : 2.5))).toFixed(1);
-  document.getElementById('sdaTelemetry').textContent = sda + '%';
-  document.getElementById('aseTelemetry').textContent = ase + '%';
-
-  const statusEl = document.getElementById('facadeStatus');
-  if (lux >= 350 && lux <= 500) {
-    statusEl.textContent = 'STATUS: SNI COMPLIANT (350-500 LUX)';
-    statusEl.style.color = '#a6c3c3';
-  } else if (lux < 350) {
-    statusEl.textContent = 'STATUS: UNDERLIT (OPEN LOUVERS)';
-    statusEl.style.color = '#526168';
-  } else {
-    statusEl.textContent = 'STATUS: GLARE RISK (INCREASE TILT)';
-    statusEl.style.color = '#cf6b42';
-  }
-}
-
-function renderFacade(){
-  fCtx.clearRect(0, 0, fW, fH);
-
-  const accent = '#cf6b42';
-  const blue = '#a6c3c3';
-  const muted = '#526168';
-
-  const wallX = fW * 0.28;
-  const floorY = fH * 0.78;
-  const ceilY = fH * 0.22;
-
-  // Floor and Ceiling slab
-  fCtx.strokeStyle = blue;
-  fCtx.lineWidth = 1.5;
-  fCtx.beginPath();
-  fCtx.moveTo(wallX - 30, ceilY);
-  fCtx.lineTo(fW - 20, ceilY);
-  fCtx.moveTo(wallX - 30, floorY);
-  fCtx.lineTo(fW - 20, floorY);
-  fCtx.stroke();
-
-  // Glass Curtain Wall
-  fCtx.strokeStyle = 'rgba(166, 195, 195, 0.4)';
-  fCtx.lineWidth = 1;
-  fCtx.beginPath();
-  fCtx.moveTo(wallX, ceilY);
-  fCtx.lineTo(wallX, floorY);
-  fCtx.stroke();
-
-  // Working plane (0.75m elevation)
-  const deskY = floorY - 32;
-  fCtx.setLineDash([4, 4]);
-  fCtx.strokeStyle = 'rgba(166, 195, 195, 0.3)';
-  fCtx.beginPath();
-  fCtx.moveTo(wallX + 15, deskY);
-  fCtx.lineTo(fW - 30, deskY);
-  fCtx.stroke();
-  fCtx.setLineDash([]);
-
-  // Labels
-  fCtx.fillStyle = muted;
-  fCtx.font = '9px monospace';
-  fCtx.fillText('WORKPLANE 0.75m', fW - 110, deskY - 6);
-  fCtx.fillText('INTERIOR ZONE', wallX + 30, ceilY + 16);
-  fCtx.fillText('EXTERIOR', 14, ceilY + 16);
-
-  // Solar position & rays
-  const normTime = (solarHour - 8) / 9;
-  const sunX = 35 + normTime * (wallX - 70);
-  const sunY = (ceilY + 40) - Math.sin(normTime * Math.PI) * 45;
-
-  // Draw Sun
-  fCtx.fillStyle = accent;
-  fCtx.beginPath();
-  fCtx.arc(sunX, sunY, 7, 0, Math.PI * 2);
-  fCtx.fill();
-
-  fCtx.strokeStyle = accent;
-  fCtx.globalAlpha = 0.35;
-  fCtx.beginPath();
-  fCtx.arc(sunX, sunY, 13, 0, Math.PI * 2);
-  fCtx.stroke();
-  fCtx.globalAlpha = 1;
-
-  // Kinetic Louvers
-  const numLouvers = 7;
-  const louverSpan = (floorY - ceilY - 24) / (numLouvers - 1);
-  const louverLen = 28;
-  const radAngle = (louverAngle * Math.PI) / 180;
-  const shadingFactor = Math.cos(radAngle);
-
-  for (let i = 0; i < numLouvers; i++) {
-    const py = ceilY + 12 + i * louverSpan;
-    const px = wallX - 14;
-
-    const lx2 = px - Math.cos(radAngle) * louverLen;
-    const ly2 = py + Math.sin(radAngle) * louverLen;
-
-    // Specular bounce to ceiling
-    fCtx.strokeStyle = 'rgba(232, 174, 136, 0.4)';
-    fCtx.lineWidth = 1;
-    fCtx.beginPath();
-    fCtx.moveTo(px, py);
-    fCtx.lineTo(px + 70 + i * 16, ceilY + 6);
-    fCtx.stroke();
-
-    // Direct ray from sun
-    fCtx.strokeStyle = 'rgba(207, 107, 66, 0.22)';
-    fCtx.beginPath();
-    fCtx.moveTo(sunX, sunY);
-    fCtx.lineTo(px, py);
-    fCtx.stroke();
-
-    // Louver blade
-    fCtx.strokeStyle = '#e7e3d8';
-    fCtx.lineWidth = 2.4;
-    fCtx.beginPath();
-    fCtx.moveTo(px, py);
-    fCtx.lineTo(lx2, ly2);
-    fCtx.stroke();
-
-    // Pivot node
-    fCtx.fillStyle = accent;
-    fCtx.beginPath();
-    fCtx.arc(px, py, 2.5, 0, Math.PI * 2);
-    fCtx.fill();
-  }
-
-  // Lux contour curve
-  const sensorStart = wallX + 25;
-  const sensorEnd = fW - 35;
-  const sensorWidth = sensorEnd - sensorStart;
-
-  fCtx.strokeStyle = accent;
-  fCtx.lineWidth = 1.8;
-  fCtx.beginPath();
-  for (let s = 0; s <= 20; s++) {
-    const sx = sensorStart + (s / 20) * sensorWidth;
-    const distFactor = Math.exp(-s * 0.12);
-    const curveOffset = (shadingFactor * distFactor * 36);
-    const sy = deskY - 3 - curveOffset;
-    if (s === 0) fCtx.moveTo(sx, sy);
-    else fCtx.lineTo(sx, sy);
-  }
-  fCtx.stroke();
-
-  requestAnimationFrame(renderFacade);
-}
-
-const timeSlider = document.getElementById('timeSlider');
-const angleSlider = document.getElementById('angleSlider');
-const aiToggleBtn = document.getElementById('aiToggleBtn');
-
-timeSlider.addEventListener('input', function(e){
-  solarHour = parseFloat(e.target.value);
-  if (aiAutoTrack) {
-    louverAngle = computeSurrogateAI(solarHour);
-    angleSlider.value = louverAngle;
-  }
-  updateTelemetry();
-});
-
-angleSlider.addEventListener('input', function(e){
-  louverAngle = parseFloat(e.target.value);
-  aiAutoTrack = false;
-  aiToggleBtn.textContent = 'AI AUTO-TRACK (ANN): MANUAL';
-  aiToggleBtn.style.background = '#526168';
-  updateTelemetry();
-});
-
-aiToggleBtn.addEventListener('click', function(){
-  aiAutoTrack = !aiAutoTrack;
-  if (aiAutoTrack) {
-    aiToggleBtn.textContent = 'AI AUTO-TRACK (ANN): ACTIVE';
-    aiToggleBtn.style.background = 'var(--accent)';
-    louverAngle = computeSurrogateAI(solarHour);
-    angleSlider.value = louverAngle;
-  } else {
-    aiToggleBtn.textContent = 'AI AUTO-TRACK (ANN): MANUAL';
-    aiToggleBtn.style.background = '#526168';
-  }
-  updateTelemetry();
-});
-
-window.addEventListener('resize', resizeFacade);
-resizeFacade();
-updateTelemetry();
-renderFacade();
-
-/* 4. THEME TOGGLE */
-const root=document.documentElement,toggle=document.getElementById('themeToggle');let theme='auto';try{theme=localStorage.getItem('gradient-theme')||'auto'}catch(e){}
-function applyTheme(){if(theme==='auto')root.removeAttribute('data-theme');else root.dataset.theme=theme;toggle.textContent='Theme: '+theme}
-toggle.addEventListener('click',()=>{theme=theme==='auto'?'dark':theme==='dark'?'light':'auto';try{localStorage.setItem('gradient-theme',theme)}catch(e){}applyTheme()});
-applyTheme();
-
-/* 5. INQUIRY HANDLER */
-function sendInquiry(){
-  const name = document.getElementById('clientName').value.trim();
-  const contact = document.getElementById('clientContact').value.trim();
-  const type = document.getElementById('projectType').value;
-  const notes = document.getElementById('clientNotes').value.trim();
-  const msg = `Halo GradiEnt Studio!\nSaya *${name}* (${contact}) ingin konsultasi arsitektur:\n• Kategori: *${type}*\n• Lokasi & Detail: ${notes || '-'}\n\nMohon informasi sesi konsultasi awal via gradientarch.tech. Terima kasih!`;
-  if(typeof gtag==='function'){gtag('event','generate_lead',{'event_category':'inquiry','event_label':type,'value':1});}
-  window.open(`https://wa.me/6285143628550?text=${encodeURIComponent(msg)}`,'_blank');
-}
-
-/* 6. LEGAL SHIELD MODALS (Reel 4) */
-function openLegalModal(type){
-  const body = document.getElementById('modalBody');
-  if(type==='privacy'){
-    body.innerHTML = `
-      <h3>Privacy Policy</h3>
-      <p><strong>GradiEnt Studio (gradientarch.tech)</strong> respects client privacy and enforces strict data minimization standards:</p>
-      <ul>
-        <li><strong>No Invasive Session Replay:</strong> We strictly avoid third-party invasive session recording software in compliance with global privacy regulations.</li>
-        <li><strong>Zero Data Brokerage:</strong> Client architectural proposals and contact data are never sold, rented, or distributed.</li>
-        <li><strong>Encrypted Communications:</strong> Official inquiries sent to <code>heru@gradientarch.tech</code> are protected by TLS transmission standards.</li>
-      </ul>
-      <p style="font-size:11px;font-family:var(--mono);">Last updated: October 2026 · Makassar, Indonesia</p>
-    `;
-  } else if(type==='terms'){
-    body.innerHTML = `
-      <h3>Terms of Practice</h3>
-      <p><strong>Professional Architectural & Computational Design Services:</strong></p>
-      <ul>
-        <li>All preliminary schematic sketches and daylighting simulations are exploratory spatial studies subject to certified professional engineer (PE / IAI) verification.</li>
-        <li>Parametric Grasshopper and structural topology models are calibrated in accordance with Indonesian National Standards (SNI) and IBC codes.</li>
-      </ul>
-      <p style="font-size:11px;font-family:var(--mono);">Studio Registration: GradiEnt Studio · Principal: Heru Ardiansyah</p>
-    `;
-  } else {
-    body.innerHTML = `
-      <h3>DMCA & Intellectual Property</h3>
-      <p>All design concepts, kinetic canopy geometries, daylighting diagrams, and photography showcased on <strong>gradientarch.tech</strong> are the exclusive intellectual property of <strong>Heru Ardiansyah / GradiEnt Studio</strong>.</p>
-      <p>For IP inquiries, copyright licensing, or academic research collaboration, contact our designated agent at <a href="mailto:heru@gradientarch.tech" style="color:var(--accent);text-decoration:underline;">heru@gradientarch.tech</a>.</p>
-      <p style="font-size:11px;font-family:var(--mono);">Registered Entity: GradiEnt Studio · Makassar, Indonesia</p>
-    `;
-  }
-  document.getElementById('legalModal').classList.add('open');
-}
-function closeLegalModal(){document.getElementById('legalModal').classList.remove('open');}
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-W4GTB1CP38');
 </script>
 
-</body>
-</html>
+<link rel="icon" href="assets/brand-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Langsung ke konten</a>
+<div class="topline"><span>Praktik Arsitektur & Desain Spasial</span><span>Makassar, Indonesia</span></div>
+<header class="header">
+  <a href="#" class="brand" aria-label="GradiEnt Studio — beranda"><img src="assets/brand-logo.png" alt="" width="40" height="40"><span>GradiEnt<span class="brand-studio">STUDIO</span></span></a>
+  <nav class="desktop-nav" aria-label="Navigasi utama"><a href="#explorations">Studi Desain</a><a href="#services">Layanan</a><a href="#process">Tahapan Kerja</a><a href="#studio">Studio</a></nav>
+  <div class="header-actions"><a class="account" href="https://gradientarch.tech/login">Masuk</a><a class="button button-dark compact" href="#contact">Bicarakan proyek</a><button id="menu-button" class="menu-button" aria-label="Buka menu" aria-controls="mobile-nav" aria-expanded="false"><span></span><span></span></button></div>
+</header>
+<nav id="mobile-nav" class="mobile-nav" aria-label="Navigasi ponsel" hidden><a href="#explorations">Studi Desain</a><a href="#services">Layanan</a><a href="#process">Tahapan Kerja</a><a href="#studio">Studio</a><a href="https://gradientarch.tech/login">Masuk ke akun</a><a href="#contact">Bicarakan proyek</a></nav>
+<main id="main">
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-content">
+    <h1 id="hero-title"><span>Arsitektur & desain spasial</span><br>di Makassar.</h1>
+    <p class="hero-description">GradiEnt Studio mengembangkan konsep ruang kontekstual, studi tapak dan pencahayaan alami, serta pemodelan 3D arsitektur.</p>
+    <div class="hero-actions">
+      <a href="#explorations" class="button button-dark">Lihat studi desain</a>
+      <a href="#contact" class="button button-outline">Bicarakan proyek</a>
+    </div>
+  </div>
+</section>
+
+<section class="showcase wrap" id="explorations" aria-labelledby="showcase-title">
+  <div class="section-caption"><h2 id="showcase-title">Studi desain</h2></div>
+  <div class="showcase-frame">
+    <div class="showcase-tabs" role="tablist" aria-label="Sudut pandang eksplorasi"><button id="tab-atmosphere" role="tab" aria-selected="true" aria-controls="panel-atmosphere" tabindex="0">Atmosfer ruang</button><button id="tab-space" role="tab" aria-selected="false" aria-controls="panel-space" tabindex="-1">Susunan ruang</button><button id="tab-light" role="tab" aria-selected="false" aria-controls="panel-light" tabindex="-1">Cahaya & naungan</button></div>
+    <div id="panel-atmosphere" class="showcase-panel" role="tabpanel" aria-labelledby="tab-atmosphere">
+      <div class="showcase-media">
+        <img class="showcase-image" src="assets/courtyard-concept.png" alt="Ilustrasi konsep paviliun tropis dengan halaman, pohon, dinding bata, dan naungan lebar" fetchpriority="high" width="1672" height="941">
+        <span class="media-label">Visual konseptual · AI</span>
+      </div>
+      <div class="showcase-info-bar">
+        <div class="info-text">
+          <span class="micro">STUDI KONSEP</span>
+          <h3>Ruang sela</h3>
+          <p>Halaman tengah sebagai ruang pertemuan dan sirkulasi alami.</p>
+        </div>
+        <button class="button button-dark compact" data-project="courtyard">Lihat detail</button>
+      </div>
+    </div>
+    <div id="panel-space" class="showcase-panel" role="tabpanel" aria-labelledby="tab-space" hidden>
+      <div class="showcase-media">
+        <img class="showcase-image" src="assets/space-study.svg?v=3" alt="Diagram konseptual hubungan ruang terbuka, naungan dan ruang bersama" width="1440" height="900">
+        <span class="media-label">Diagram konsep</span>
+      </div>
+      <div class="showcase-info-bar">
+        <div class="info-text">
+          <span class="micro">ORGANISASI RUANG</span>
+          <h3>Susunan ruang</h3>
+          <p>Diagram hubungan fungsional antara ruang bersama, halaman terbuka, dan area bernaung.</p>
+        </div>
+        <button class="button button-dark compact" data-project="space">Buka eksplorasi</button>
+      </div>
+    </div>
+    <div id="panel-light" class="showcase-panel" role="tabpanel" aria-labelledby="tab-light" hidden>
+      <div class="showcase-media">
+        <img class="showcase-image" src="assets/light-study.svg?v=3" alt="Ilustrasi prinsip overhang menyaring cahaya pada ruang di bawah naungan" width="1440" height="900">
+        <span class="media-label">Diagram konsep</span>
+      </div>
+      <div class="showcase-info-bar">
+        <div class="info-text">
+          <span class="micro">CAHAYA & NAUNGAN</span>
+          <h3>Lapisan cahaya</h3>
+          <p>Diagram prinsip overhang dan peneduh dalam mengatur penetrasi cahaya alami.</p>
+        </div>
+        <button class="button button-dark compact" data-project="light">Buka eksplorasi</button>
+      </div>
+    </div>
+  </div>
+  <div class="showcase-meta"><span>Konsep dan diagram eksploratif</span><p>Eksplorasi awal hubungan geometri ruang dengan pencahayaan dan lingkungan.</p></div>
+</section>
+
+<section class="services section wrap" id="services" aria-labelledby="services-title"><div class="section-heading"><div><h2 id="services-title">Layanan desain</h2></div><p class="section-intro">Setiap proyek berangkat dari konteks yang unik. Lingkup kerja disesuaikan mulai dari eksplorasi awal hingga dokumentasi rancangan.</p></div>
+<div class="service-list">
+  <article class="service-row"><span class="service-number">01</span><div><h3>Arsitektur & tata ruang</h3><p>Menyusun kebutuhan ruang, tata letak fungsional, dan bentuk massa bangunan yang kontekstual.</p><div class="tags"><span>Konsep arsitektur</span><span>Tata ruang</span><span>Pengembangan desain</span></div></div><a href="#contact" class="service-link" data-service="Arsitektur & tata ruang">Diskusikan</a></article>
+  <article class="service-row"><span class="service-number">02</span><div><h3>Tapak & pencahayaan</h3><p>Membaca orientasi matahari, jalur angin, dan strategi bukaan alami untuk kenyamanan termal dan visual.</p><div class="tags"><span>Analisis tapak</span><span>Pencahayaan alami</span><span>Strategi selubung</span></div></div><a href="#contact" class="service-link" data-service="Tapak & pencahayaan">Diskusikan</a></article>
+  <article class="service-row"><span class="service-number">03</span><div><h3>Pemodelan & visualisasi 3D</h3><p>Mengembangkan dan menguji gagasan desain melalui model digital 3D dan studi geometri ruang terukur.</p><div class="tags"><span>Pemodelan 3D</span><span>Eksplorasi geometri</span><span>Visualisasi konsep</span></div></div><a href="#contact" class="service-link" data-service="Pemodelan & visualisasi 3D">Diskusikan</a></article>
+</div></section>
+
+<section class="process-section" id="process" aria-labelledby="process-title"><div class="wrap process-layout"><div class="process-intro"><h2 id="process-title">Tahapan kerja</h2><p class="section-intro">Alur kolaborasi yang terstruktur untuk memastikan setiap keputusan rancangan memiliki dasar yang jelas.</p><a href="#contact" class="text-link">Mulai percakapan</a></div><div class="process-steps">
+<details open><summary><h3>Mendengarkan kebutuhan</h3><span class="plus" aria-hidden="true"></span></summary><div class="step-body"><p>Memahami aktivitas, kebutuhan ruang, lokasi tapak, prioritas, dan batasan proyek sejak tahap awal.</p><span class="micro">Keluaran: Brief dan lingkup perancangan</span></div></details>
+<details><summary><h3>Analisis konteks tapak</h3><span class="plus" aria-hidden="true"></span></summary><div class="step-body"><p>Menelaah kondisi tapak, orientasi matahari, sirkulasi akses, dan iklim mikro sekitar sebagai landasan desain.</p><span class="micro">Keluaran: Pemetaan potensi dan batasan</span></div></details>
+<details><summary><h3>Eksplorasi & pengujian konsep</h3><span class="plus" aria-hidden="true"></span></summary><div class="step-body"><p>Mengembangkan alternatif organisasi ruang, hubungan massa, dan strategi naungan untuk menemukan solusi terbaik.</p><span class="micro">Keluaran: Konsep terpilih dan diagram ruang</span></div></details>
+<details><summary><h3>Finalisasi dokumentasi</h3><span class="plus" aria-hidden="true"></span></summary><div class="step-body"><p>Mengembangkan gambar arsitektural dan materi visual terukur sesuai tahap pekerjaan yang disepakati.</p><span class="micro">Keluaran: Dokumentasi rancangan terpadu</span></div></details>
+</div></div></section>
+
+<section class="section wrap studies" aria-labelledby="studies-title"><div class="section-heading compact-heading"><div><h2 id="studies-title">Konsep dan diagram</h2></div><div class="filters" role="group" aria-label="Filter eksplorasi"><button class="active" data-filter="all" aria-pressed="true">Semua</button><button data-filter="architecture" aria-pressed="false">Arsitektur</button><button data-filter="research" aria-pressed="false">Riset ruang</button></div></div>
+<div class="study-grid" id="study-grid">
+<article class="study-card" data-category="architecture"><button class="study-image" data-project="courtyard" aria-label="Buka Ruang sela"><img src="assets/courtyard-concept.png" alt="Paviliun tropis konseptual di sekitar halaman" loading="lazy" width="1672" height="941"><span class="study-badge">Konsep · Visual AI</span></button><div class="study-info"><div><h3><button class="title-button" data-project="courtyard">Ruang sela</button></h3><p>Studi paviliun halaman dan naungan lebar.</p></div></div></article>
+<article class="study-card" data-category="research"><button class="study-image" data-project="space" aria-label="Buka Susunan ruang"><img src="assets/space-study.svg?v=3" alt="Studi denah ruang bersama dan halaman" loading="lazy" width="1440" height="900"><span class="study-badge">Diagram konsep</span></button><div class="study-info"><div><h3><button class="title-button" data-project="space">Susunan ruang</button></h3><p>Diagram hubungan ruang bersama dan ruang terbuka.</p></div></div></article>
+<article class="study-card" data-category="research"><button class="study-image" data-project="light" aria-label="Buka Lapisan cahaya"><img src="assets/light-study.svg?v=3" alt="Diagram konseptual cahaya dan naungan" loading="lazy" width="1440" height="900"><span class="study-badge">Diagram konsep</span></button><div class="study-info"><div><h3><button class="title-button" data-project="light">Lapisan cahaya</button></h3><p>Diagram orientasi bukaan dan pembiasan cahaya.</p></div></div></article>
+</div><p class="gallery-status" id="gallery-status" aria-live="polite">3 eksplorasi</p></section>
+
+<section class="studio-section wrap" id="studio" aria-labelledby="studio-title"><div class="studio-label"><span class="micro">PROFIL STUDIO</span><span class="studio-city">Makassar, Indonesia</span></div><div class="studio-copy"><h2 id="studio-title">Tentang GradiEnt</h2><p>GradiEnt Studio adalah praktik arsitektur dan desain spasial yang dirintis Heru Ardiansyah di Makassar. Fokus studio tertumpu pada eksplorasi ruang yang kontekstual, optimalisasi pencahayaan alami, dan respons adaptif terhadap iklim tropis.</p><p>Pendekatan desain mengombinasikan studi tapak cermat dengan pemodelan 3D untuk menguji alternatif ruang secara terukur dan komunikatif.</p><div class="founder"><span class="founder-monogram">HA</span><div><strong>Heru Ardiansyah</strong><span>Founder · Spatial Designer</span></div><a href="https://www.linkedin.com/in/heru-ardiansyah-84a97343a/" target="_blank" rel="noopener noreferrer" class="founder-link">LinkedIn</a></div></div></section>
+
+<section class="faq-section wrap" aria-labelledby="faq-title"><h2 id="faq-title">Pertanyaan umum</h2><div class="faq-list"><details><summary>Apa yang perlu disiapkan untuk konsultasi?<span class="plus" aria-hidden="true"></span></summary><p>Gambaran kebutuhan, lokasi tapak, dan perkiraan luas jika sudah tersedia. Foto lokasi, referensi rancangan, serta kisaran anggaran akan mempermudah diskusi awal.</p></details><details><summary>Apakah bisa mulai dari tahap konsep awal saja?<span class="plus" aria-hidden="true"></span></summary><p>Bisa. Tahapan, keluaran dokumen, dan batas pekerjaan disepakati di awal sesuai kebutuhan dan skala proyek Anda.</p></details><details><summary>Bagaimana estimasi biaya dan waktu pengerjaannya?<span class="plus" aria-hidden="true"></span></summary><p>Penawaran kerja dan jadwal disusun setelah lingkup, kompleksitas ruang, dan materi awal dipahami bersama sebelum pengerjaan dimulai.</p></details><details><summary>Apakah visual di situs merupakan bangunan terbangun?<span class="plus" aria-hidden="true"></span></summary><p>Materi yang ditampilkan saat ini merupakan eksplorasi konsep awal dan diagram ruang. Setiap visual diberi keterangan transparan sesuai status pengembangannya.</p></details></div></section>
+
+<section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="wrap contact-layout"><div class="contact-intro"><h2 id="contact-title">Diskusikan rencana<br><span>proyek Anda.</span></h2><p class="contact-description">Ceritakan kebutuhan ruang atau rencana pembangunan Anda.<br>GradiEnt Studio siap membantu merumuskan arah perancangan yang tepat.</p><div class="contact-links"><a href="mailto:heruardiansyah2one@gmail.com">Email studio</a><a href="https://wa.me/6285143628550" target="_blank" rel="noopener noreferrer">WhatsApp studio</a></div></div>
+<form id="inquiry-form" class="inquiry-form"><div class="form-top"><span class="form-title">Formulir Diskusi Proyek</span></div><div class="form-row"><label for="client-name">Nama Anda<input id="client-name" name="name" autocomplete="name" placeholder="Nama lengkap" required maxlength="100"></label><label for="project-location">Lokasi proyek<input id="project-location" name="location" placeholder="Kota / kabupaten" required maxlength="120"></label></div><label for="service-select">Layanan yang ingin didiskusikan<select id="service-select" name="service"><option>Arsitektur & tata ruang</option><option>Tapak & pencahayaan</option><option>Pemodelan & visualisasi 3D</option><option>Belum tahu, ingin berdiskusi</option></select></label><label for="project-brief">Ceritakan tentang rencana Anda<textarea id="project-brief" name="brief" rows="3" placeholder="Kebutuhan ruang, kondisi tapak, atau hal yang ingin ditanyakan…" required maxlength="2000"></textarea></label><button class="button button-dark" type="submit">Siapkan pesan WhatsApp</button><p class="form-note">Pesan dapat Anda periksa dan edit sebelum dibuka di aplikasi WhatsApp. Formulir ini tidak menyimpan data pribadi Anda di server.</p></form></div></section>
+</main>
+<footer class="footer wrap"><div class="footer-top"><a href="#" class="brand"><img src="assets/brand-logo.png" alt="Logo GradiEnt" width="40" height="40"><span>GradiEnt<span class="brand-studio">STUDIO</span></span></a><a class="back-top" href="#" aria-label="Kembali ke atas">Ke atas</a></div><div class="footer-links"><div><span class="footer-heading">JELAJAHI</span><a href="#explorations">Studi Desain</a><a href="#services">Layanan</a><a href="#process">Tahapan Kerja</a><a href="#studio">Studio</a></div><div><span class="footer-heading">TERHUBUNG</span><a href="https://instagram.com/heruardiansyah_" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.linkedin.com/in/heru-ardiansyah-84a97343a/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://github.com/cryptoandforex21th-beep" target="_blank" rel="noopener noreferrer">GitHub</a></div><div><span class="footer-heading">PORTAL</span><a href="https://gradientarch.tech/login">Masuk Akun</a><a href="https://gradientarch.tech/register">Registrasi</a><a href="https://gradientarch.tech/dashboard">Portal Klien</a></div><div class="footer-address"><span class="footer-heading">LOKASI</span><p>Makassar, Sulawesi Selatan<br>Indonesia · WITA (UTC+8)</p><a href="mailto:heruardiansyah2one@gmail.com">heruardiansyah2one@gmail.com</a></div></div><div class="footer-bottom"><span>© 2026 GradiEnt Studio. Seluruh hak cipta dilindungi.</span><div><a href="https://gradientarch.tech/privacy">Kebijakan Privasi</a><a href="https://gradientarch.tech/terms">Ketentuan Layanan</a></div></div></footer>
+
+<dialog id="project-dialog" class="project-dialog" aria-labelledby="project-dialog-title"><button class="dialog-close" aria-label="Tutup detail konsep">×</button><img id="project-dialog-image" src="assets/courtyard-concept.png" alt=""><div class="project-dialog-body"><p class="dialog-category" id="project-dialog-label"></p><h2 id="project-dialog-title"></h2><p class="dialog-lead" id="project-dialog-description"></p><dl id="project-dialog-facts"></dl><div id="project-dialog-notes"></div><a href="#contact" class="button button-dark dialog-contact">Diskusikan gagasan serupa</a></div></dialog>
+<dialog id="message-dialog" class="message-dialog" aria-labelledby="message-title"><button class="dialog-close" aria-label="Tutup pratinjau pesan">×</button><p class="dialog-category">Konfirmasi Pesan</p><h2 id="message-title">Pesan Anda siap dikirim</h2><p>Pesan belum terkirim secara otomatis. Anda dapat meninjau atau mengubah isi teks sebelum membuka WhatsApp.</p><textarea id="message-preview" aria-label="Pesan WhatsApp yang dapat diedit" rows="10"></textarea><div class="message-actions"><button type="button" class="button button-outline" id="copy-message">Salin pesan</button><a href="https://wa.me/6285143628550" target="_blank" rel="noopener noreferrer" class="button button-dark" id="whatsapp-link">Buka WhatsApp</a></div><p id="copy-status" class="form-note" aria-live="polite"></p></dialog>
+</body></html>
