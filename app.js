@@ -57,6 +57,24 @@
   $$('[data-service]').forEach(link => link.addEventListener('click', () => {$('#service-select').value=link.dataset.service;}));
 
   const concepts = {
+    lemukutan: {
+      title: 'Paviliun Sewa Olahraga Pulau Lemukutan',
+      label: 'Arsitektur & DED · Sport Resort',
+      image: 'assets/lemukutan-hero-crop.png',
+      alt: 'Perspektif 3D Paviliun Sewa Olahraga Pulau Lemukutan Kalimantan Barat',
+      description: 'Fasilitas sewa alat olahraga bahari dengan sistem panggung adaptif pesisir dan portal rangka baja prapabrikasi.',
+      facts: [
+        ['Lokasi', 'Pulau Lemukutan, Kalbar'],
+        ['Dimensi', 'Modul 8.4m × 6.6m (55.4 m²)'],
+        ['Struktur', 'Baja H-Beam 305×305 & Footplat'],
+        ['Keluaran', 'DED Lengkap (A1-A5, S1-S7, D1)']
+      ],
+      sections: [
+        ['Respon Tapak Pesisir & Logistik Pulau', 'Dirancang untuk kondisi pulau terpencil dengan mengangkat massa bangunan di atas pondasi footplat bertingkat untuk menjaga kontur tanah alami pesisir. Modul struktur baja prapabrikasi memudahkan mobilisasi laut dan perakitan cepat di tapak.'],
+        ['Transparansi Etalase & Efisiensi Termal', 'Fasad depan curtain wall kaca transparan berfungsi ganda sebagai etalase peralatan olahraga air dan penangkap cahaya alami. Bukaan ventilasi silang dipadukan dengan 4 titik skylight pada atap pelana bitumen untuk mengalirkan panas ke atas dan memaksimalkan penerangan.'],
+        ['Gambar Kerja Lengkap & Spesifikasi', 'Dokumentasi teknis terinci mencakup denah arsitektur 1:100, potongan melintang/memanjang, isometri 3D rangka baja H-Beam 305×305, hingga detail pembesian footplat beton 150×150 cm bertulang D13.']
+      ]
+    },
     courtyard: {
       title: 'Studi Paviliun Halaman',
       label: 'Arsitektur · Eksplorasi Konsep',
@@ -122,6 +140,7 @@
     item.facts.forEach(([term,value])=>{const box=document.createElement('div'),dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=term;dd.textContent=value;box.append(dt,dd);facts.append(box);});
     const notes=$('#project-dialog-notes');notes.replaceChildren();
     item.sections.forEach(([heading,copy])=>{const h=document.createElement('h3'),p=document.createElement('p');h.textContent=heading;p.textContent=copy;notes.append(h,p);});
+    if(key==='lemukutan'){const a=document.createElement('a');a.href='preview-lemukutan.html';a.className='button button-outline compact';a.style.marginTop='18px';a.style.display='inline-flex';a.textContent='Lihat Gambar Kerja & Analisis Lengkap ↗';notes.append(a);}
     projectDialog.showModal();projectDialog.scrollTop=0;document.body.classList.add('dialog-open');
   }
   $$('[data-project]').forEach(button=>button.addEventListener('click',()=>openProject(button.dataset.project,button)));
